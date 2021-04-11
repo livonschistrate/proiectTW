@@ -1,0 +1,132 @@
+html{
+    overflow: scroll;
+}
+
+.howitworks .wsquare{
+    display: block;
+    background-color: white;
+    position: relative;
+    width: 80em;
+    height: auto;
+    bottom: -5em;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.pricebox .wsquare{
+    display: block;
+    background-color: white;
+    position: relative;
+    width: 80em;
+    height: 40em;
+    margin: auto;
+    margin-top: 12.75em;
+    margin-bottom: 5em;
+}
+
+
+@media (max-width: 1195px){
+    .howitworks .wsquare{
+        width: 55em;
+    }
+    .price .wsquare{
+        width: 55em;
+    }
+}
+
+@media (max-width: 960px){
+    .howitworks .wsquare{
+        width: 40em;
+    }
+    .price .wsquare{
+        width: 40em;
+    }
+}
+
+@media (max-width: 760px){
+    .howitworks .wsquare{
+        width: 30em;
+    }
+    .price .wsquare{
+        width: 30em;
+    }
+}
+
+.hitwtext{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+}
+
+.s-text{
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    padding-left: 0.5em;
+    margin-top: -0.15em;
+}
+
+.accord{
+    cursor: pointer;
+    text-align: left;
+    transition: 0.5s;
+    background-color: white;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.accordpanel{
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+.step-detail{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    margin-bottom: 1em;
+}
+
+.priceboxtitle{
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 0.75em;
+}
+
+.pricetag{
+    float: left;
+    display: block;
+    border: solid;
+    padding-bottom: 14em;
+    background-color: white;
+    position: relative;
+    width: 25em;
+    height: 10em;
+}
+
+.pricetitle{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 36px;
+    padding-left: 0.25em;
+}
+
+.pricedetail{
+    font-family: 'Arial', sans-serif;
+    font-size:16px;
+    color:rgb(143, 141, 138);
+    padding-left: 0.75em;
+}
+
+.price{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    padding-left: 0.35em;
+}
+
+.tag-perks{
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 0.75em;
+}
