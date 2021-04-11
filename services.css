@@ -18,7 +18,7 @@ html{
     background-color: white;
     position: relative;
     width: 80em;
-    height: 40em;
+    height: 20em;
     margin: auto;
     margin-top: 12.75em;
     margin-bottom: 5em;
@@ -93,10 +93,10 @@ html{
     font-family: 'Raleway', sans-serif;
     font-size: 40px;
     text-align: center;
-    margin-bottom: 0.75em;
+    display: block;
 }
 
-.pricetag{
+/*.pricetag{
     float: left;
     display: block;
     border: solid;
@@ -129,4 +129,4 @@ html{
 .tag-perks{
     font-family: 'Montserrat', sans-serif;
     padding-left: 0.75em;
-}
+}*/
