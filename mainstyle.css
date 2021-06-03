@@ -1,7 +1,6 @@
 html, body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    overflow: visible;
 }
 
 .container{
@@ -42,7 +41,6 @@ html, body{
 }
 
 .title{
-    display: flex;
     margin: 0.5em;
     margin-left: 1.5em;
     font-size: 2.5em;
@@ -57,20 +55,15 @@ html, body{
 }
 
 
-.menubar{
-    position: relative;
+#menubar{
     float: right;
     display: flex;
 }
 
 .menubutton{
-    display: flex;
     float: right;
     width: 5em;
-    height: 3em;
-    margin-top: 1em;
-    color: #292932;
-    
+    margin-top: 1.35em;
 }
 
 .options{
@@ -78,13 +71,9 @@ html, body{
     cursor: pointer;
     height: 3.2em;
     display: none;
-    align-self: flex-end; 
     background-color: inherit;
 }
 
-.options:hover{
-    border-radius: 10px;
-}
 
 .bar{
     width: 3em;
@@ -94,7 +83,46 @@ html, body{
     background-color: white;
 }
 
+
+#menubar .item{
+    padding-top: 1.5em;
+    padding-right: 1em;
+    padding-left: 1em;
+    font-size: 1.5em;
+    margin-bottom: 1.25em;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+}
+
+a {color:inherit;}
+
+#menubar .item::after{
+    border-bottom: 3px solid rgb(4, 248, 236);
+    content: '';
+    display: block;
+    width: 0;
+    transition: .5s;
+}
+
+#menubar .item:hover{
+    cursor: pointer;
+}
+
+#menubar .item:hover::after{
+    width:100%;
+
+}
+
+.display-on{
+    display:flex !important;
+}
+.display-off{
+    display:none;
+}
+
 @media(max-width: 851px){
+     
+    
     .menubutton{
         height: 100%;
         opacity: 1;
@@ -103,19 +131,30 @@ html, body{
     .menubutton:hover{
         background-color: transparent;
     }
-    .header .menubar{
+    .header #menubar{
         background-color: rgb(47, 161, 150);
         display: none;
-        margin-top: 1em;
-        margin-right: 2em;
-        z-index: 2;
+        float: none;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        z-index: 1;
+        padding-right: 100%;
+        transition: transform 300ms ease-in-out;
+        overflow: hidden;
+        box-sizing: border-box;
     }
+
+    .header #menubar .item{
+        width: 3em;
+    }
+    
     .options{
         display: inline-block;
     }
 
-    .menubar .item{
-        margin-right: 24em;
+    #menubar .item::after{
+        content:unset;
     }
 
     .footer .title{
@@ -125,46 +164,14 @@ html, body{
     .footer .item{
         margin-right: 1em;
     }
+
+    .display-on{
+        display: block;
+    }
 }
-
-
-.menubar .item{
-    box-sizing: border-box;
-    padding-top: 1.5em;
-    padding-right: 1em;
-    padding-left: 1em;
-    font-size: 1.5em;
-    font-weight: 400;
-    margin-bottom: 1.25em;
-    font-family: 'Source Sans Pro', sans-serif;
-    text-decoration: none;
-}
-
-a {color:inherit;}
-
-.menubar .item::after{
-    border-bottom: 3px solid rgb(4, 248, 236);
-    content: '';
-    display: block;
-    width: 0px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: .5s;
-}
-
-.menubar .item:hover{
-    cursor: pointer;
-}
-
-.menubar .item:hover::after{
-    width:100%;
-    left: 0;
-}
-
 
 .first-pickup .wsquare{
-    display: block;
+    
     background-color: white;
     position: relative;
     width: 80em;
@@ -174,7 +181,7 @@ a {color:inherit;}
 }
 
 .our-services .wsquare{
-    display: block;
+    
     background-color: white;
     position: relative;
     width: 80em;
@@ -184,7 +191,7 @@ a {color:inherit;}
 }
 
 .whyus .wsquare{
-    display: block;
+    
     background-color: white;
     position: relative;
     width: 80em;
@@ -194,45 +201,10 @@ a {color:inherit;}
     margin-bottom: 5em;
 }
 
-@media (max-width: 1295px){
-    .our-services .wsquare{
-        width: 60em;
+.intro-text{
+        width:50%;
+        display: inline-block;
     }
-    .first-pickup .wsquare{
-        width: 60em;
-    }
-    .whyus .wsquare{
-        width: 60em;
-        height: 48em;
-        padding-right: 1em;
-    }
-}
-@media (max-width: 990px){
-    .menubar .item:hover::after{
-        width:1px;
-    }
-    .menubar .item::after{
-        border-bottom:unset;
-    }
-    .menubar .item{
-        display:flex;
-    }
-    .our-services .wsquare{
-        width: 40em;
-    }
-    .first-pickup .wsquare{
-        width: 40em;
-        height: 35em;
-    }
-    .whyus .wsquare{
-        width: 40em;
-        height: 65em;
-    }
-    .laundry-image{
-        width: 45%;
-        height: 45%;
-    }
-}
 
 .save3hrs{
     font-family: 'Montserrat', sans-serif;
@@ -250,9 +222,8 @@ a {color:inherit;}
 .laundry-image{
     position: relative;
     float: right;
-    max-width: 60%;
-    max-height: 60%;
-    margin-right: 2em;
+    width: 45%;
+    margin-right: 3em;
     margin-top: -1em;
 }
 
@@ -261,8 +232,8 @@ a {color:inherit;}
     border-radius: 3px;
     cursor: pointer;
     display: block;
-    margin-left: 1.5em;
-    margin-top: 5em;
+    margin-left: 1.65em;
+    margin-top: 3em;
     width: 30%;
     height: 10%;
     font-size: 20px;
@@ -270,51 +241,67 @@ a {color:inherit;}
     color: white;
     font-family: 'Raleway', sans-serif;
 }
-
-.service-box{
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 45px;
-}
-
-.im-1{
-    position: relative;
-    float: right;
-    margin-top: -2em;
-    width: 35%;
-    height: 60%;
-}
-
-.im-shoes{
-    height:55%;
-}
-
-.im-wdif{
-    width: 16em;
-    height: 16em;
-}
-
 @media (max-width: 1295px){
-.im-wdif{
-    width: 21vw;
-    height: 21vw;
-}
-}
+    
+    .our-services .wsquare{
+        width: 60em;
+    }
+    .first-pickup .wsquare{
+        width: 60em;
+    }
+    .whyus .wsquare{
+        width: 60em;
+        height: 48em;
+        padding-right: 1em;
+    }
 
-.lr-button{
-    border: none;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    outline:none;
-    cursor:pointer;
-    overflow:hidden;
-    font-size: 2em;
-}
+    .laundry-image{
+        margin-top: 0em;
+    }
 
+    .first-pickup .signup{
+        width: 40%;
+        height: 10%;
+    }
+    
+}
+@media (max-width: 990px){
+    
+    .intro-text{
+        width:100%;
+        display: inline-block;
+    }
+    .our-services .wsquare{
+        width: 40em;
+        height: 50em;
+    }
+    .first-pickup .wsquare{
+        width: 40em;
+        height: 41em;
+    }
+    .whyus .wsquare{
+        width: 40em;
+        height: 65em;
+    }
+    .laundry-image{
+        display: flex;
+        width: 85%;
+    }
+
+    .first-pickup .signup{
+        margin-left: 8em;
+        width: 50%;
+        height: 7%;
+    }
+
+    .image-to-button{
+        height: 45%;
+    }
+
+}
 
 .carousel{
     display: flex;
-    position: relative;
     border: 1px;
     overflow: hidden;
 }
@@ -332,15 +319,14 @@ a {color:inherit;}
 
 .carousel-service{
     min-width: 95%;
-    height: 20em;
+    height: 30em;
     text-align: left;
     transition: transform 0.5s ease-in-out;
 }
 
 .carousel > button{
     position: absolute;
-    top: 0;
-    bottom: 0;
+    padding-top: 3em;
     z-index: 1;
 }
 
@@ -352,10 +338,107 @@ a {color:inherit;}
     right: 0;
 }
 
+.service-box{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
+}
+
+.im-1{
+    position: relative;
+    float: right;
+    margin-top: -2em;
+    margin-left: 1em;
+    width: 35%;
+}
+
+.im-shoes{
+    height:40%;
+}
+
+.im-wdif{
+    width: 16em;
+    height: 16em;
+    padding-right: 4em;
+}
+
+.lr-button{
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    outline:none;
+    cursor:pointer;
+    overflow:hidden;
+    font-size: 2em;
+}
+
+#rightBtn{
+    margin-left: 2em;
+}
+
+
+@media (max-width: 1295px){
+.im-wdif{
+    width: 21vw;
+    height: 21vw;
+}
+}
+
+@media (max-width: 990px){
+    .service-box{
+        font-size: 40px;
+    }
+    .ctext{
+        margin-bottom: 2em;
+    }
+    .s1{
+        padding-left: 9.5em;
+    }
+    .s2{
+        padding-left: 8.75em;
+    }
+    .s3{
+        padding-left: 8.75em;
+    }
+    .s4{
+        padding-left: 6em;
+    }
+    .s5{
+        padding-left: 11.5em;
+    }
+    
+    .carousel-service{
+        height: 40em;
+    }
+
+    .carousel > button{
+        padding-top: 7em;
+    }
+
+    .im-1{
+        width: 30em;
+        height: 25em;
+        padding-right: 2.75em;
+        margin-bottom: 1.5em;
+    }
+
+    .im-shoes{
+        height:45%;
+        padding-left: 1.5em;
+    }
+}
+
+
 .reasontext{
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
     margin-bottom: 1em;
+}
+
+@media (max-width:990px){
+    .whyus .service-box{
+        padding-left: 1em;
+    }
 }
 
 
@@ -367,7 +450,7 @@ a {color:inherit;}
     background-color: rgb(54, 145, 145);
 }
 
-.footer .menubar{
+.footer #menubar{
     padding-top: 2.5em;
     margin-left: -14em;
 }

@@ -1,8 +1,8 @@
 
 function showMenu(){
     var menu = document.getElementById('menubar');
-    if(menu.style.display === "block")
-        menu.style.display = "none";
+    if(menu.className === "display-off")
+        menu.className += " display-on";
     else
-        menu.style.display = "block";
+        menu.className = "display-off";
 }

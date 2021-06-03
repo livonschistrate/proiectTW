@@ -16,14 +16,14 @@
         <header class="header">
             <div class="title" href="mainpage.html">CleanAll</div>
         <div class="menu" onclick="showMenu()">
-        <div class="menubutton">
+            <div class="menubutton">
                 <button class="options">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </button>
-        </div>
-        <nav class="menubar" id="menubar">
+            </div>
+        <nav  id="menubar" class="display-off">
             <a class="item" href="contact.html">Contact</a>
             <a class="item" href="services.html">Servicii</a>
             <a class="item" href="login.html">Log-in</a>
@@ -37,8 +37,13 @@
         <div class="wsquare">
             <p class="save3hrs">Economisiți 3 ore pe săptămâna cu <b>CleanAll</b>!</p>
             <br></br>
-            <img class="laundry-image" src="images/laundryroom.jpg">
-            <p class="cleanapp-does">Salut! Eu sunt CleanAll și sunt aici ca să-ți preiau, să curăț și să-ți livrez rufele!</p>
+            <div class="intro-text">
+                <p class="cleanapp-does">Salut! Eu sunt CleanAll și sunt aici ca să-ți preiau, să curăț și să-ți livrez rufele!</p>
+            </div>
+            
+                <img class="laundry-image" src="images/laundryroom.jpg">
+            
+            <div class="image-to-button"></div>
             <button class="signup">Programează-ți prima preluare!</button>
         </div>
     </div>
@@ -48,9 +53,9 @@
             <p class="service-box">SERVICIILE NOASTRE</p>
             
         <section class="carousel">
-            <button type="button" id="leftBtn" class="lr-button"> ← </button>
+            <button type="button" id="leftBtn" class="lr-button"> &lt </button>
             <div class="carousel-service">
-                <h1 class="ctext">Curatare uscata</h1>
+                <h1 class="ctext s1">Curatare uscata</h1>
                 <br>
                 <img src="images/drycleaning.jpg" class="im-1 im-drycleaning">
                 <p class="cpar">
@@ -61,7 +66,7 @@
             </div>
 
             <div class="carousel-service">
-                <h1 class="ctext">Curatare de pantofi</h1>
+                <h1 class="ctext s2">Curatare de pantofi</h1>
                 <br>
                 <img src="images/shoes.jpg" class="im-1 im-shoes">
                 <p class="cpar">
@@ -71,7 +76,7 @@
             </div>
 
             <div class="carousel-service">
-                <h1 class="ctext">Curatare de covoare</h1>
+                <h1 class="ctext s3">Curatare de covoare</h1>
                 <br>
                 <img src="images/carpetcl.jpg" class="im-1 im-carpet">
                 <p class="cpar"> Profesionistii in curatarea covoarelor de la CleanAll sunt echipati
@@ -80,7 +85,7 @@
             </div>
 
             <div class="carousel-service">
-                <h1 class="ctext">Spalare, calcare si impachetare</h1>
+                <h1 class="ctext s4">Spalare, calcare si impachetare</h1>
                 <br>
                 <img src="images/wdif.jpg" class="im-1 im-wdif">
                 <p class="cpar"> Hainele sunt procesate folosind detergenti 100% bio-degradabile. Ideal pentru
@@ -89,7 +94,7 @@
             </div>
 
             <div class="carousel-service">
-                <h1 class="ctext">Tesetura</h1>
+                <h1 class="ctext s5">Tesetura</h1>
                 <br>
                 <img src="images/darning.jpg" class="im-1 im-darning">
                 <p class="cpar"> De ce sa renunti la haine deoarece ele sunt rupte? Expertii nostri in
@@ -97,7 +102,7 @@
                 </p>
             </div>
 
-            <button type="button" id="rightBtn" class="lr-button"> → </button>
+            <button type="button" id="rightBtn" class="lr-button"> &gt </button>
         </section>        
         
         </div>
@@ -136,7 +141,7 @@
 
     <footer class="footer">
         <div class="title" href="mainpage.html">CleanAll</div>
-        <ul class="menubar">
+        <ul id="menubar">
             <li class="item">Despre</li>
             <li class="item">Contact</li>
             <li class="item">Cum functioneaza</li>

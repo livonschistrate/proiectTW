@@ -16,7 +16,7 @@
         <div class="background"></div>
         <header class="header">
             <div class="title" href="mainpage.html">CleanAll</div>
-        <div class="menu">
+        <div class="menu" onclick="showMenu()">
             <div class="menubutton">
                 <button class="options">
                     <div class="bar"></div>
@@ -24,11 +24,11 @@
                     <div class="bar"></div>
                 </button>
             </div>
-        <nav class="menubar">
+        <nav id="menubar" class="display-off">
             <a class="item">Despre</a>
             <a class="item" href="services.html">Servicii</a>
-            <a class="item">Log-in</a>
-            <a class="item">Înregistrare</a>
+            <a class="item" href="login.html">Log-in</a>
+            <a class="item" href="register.html">Înregistrare</a>
         </nav>
         </div>
         </header>
@@ -82,18 +82,19 @@
         <div class="wsquare">
             <p class="priceboxtitle"> PRETURI </p>
             <br>
-            <a href="subscription.html" class="priceboxtitle"> Vezi abonamentele aici </a>
+            <a href="subscription.html" class="priceboxtitle pbtlink"> Vezi abonamentele aici </a>
         </div>
     </div>
 
     <footer class="footer">
         <div class="title" href="mainpage.html">CleanAll</div>
-        <ul class="menubar">
+        <ul id="menubar">
             <li class="item">Despre</li>
             <li class="item">Contact</li>
             <li class="item">Cum functioneaza</li>
         </ul>
     </footer>
     <script src="scripts/accordion.js"></script>
+    <script src="scripts/mainbutton.js"></script>
 </body>
 </html>
