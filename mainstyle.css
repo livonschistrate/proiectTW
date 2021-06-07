@@ -115,6 +115,7 @@ a {color:inherit;}
 
 .display-on{
     display:flex !important;
+    transition: all 1s ease-in;
 }
 .display-off{
     display:none;
@@ -140,7 +141,6 @@ a {color:inherit;}
         top: 90px;
         z-index: 1;
         padding-right: 100%;
-        transition: transform 300ms ease-in-out;
         overflow: hidden;
         box-sizing: border-box;
     }
@@ -167,6 +167,7 @@ a {color:inherit;}
 
     .display-on{
         display: block;
+        top: -1000px;
     }
 }
 
