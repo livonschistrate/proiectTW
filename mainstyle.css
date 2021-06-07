@@ -33,6 +33,7 @@ html, body{
     border-radius: 10px;
     box-shadow: -2px 3px 18px 1px black;
     padding-top: 0.5em;
+    overflow: auto;
 }
 
 @media(max-width:820px){
