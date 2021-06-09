@@ -29,10 +29,10 @@
                 </button>
             </div>
         <nav id="menubar" class="display-off">
-            <a class="item" href="contact.html">Contact</a>
-            <a class="item" href="services.html">Servicii</a>
-            <a class="item" href="login.html">Log-in</a>
-            <a class="item" href="register.html">Înregistrare</a>
+            <a class="item" href="contact.php">Contact</a>
+            <a class="item" href="services.php">Servicii</a>
+            <a class="item" href="login.php">Log-in</a>
+            <a class="item" href="register.php">Înregistrare</a>
         </nav>
         </div>
         </header>
@@ -94,9 +94,8 @@
     <footer class="footer">
         <div class="title" href="mainpage.html">CleanAll</div>
         <ul id="menubar">
-            <li class="item">Despre</li>
-            <li class="item">Contact</li>
-            <li class="item">Cum functioneaza</li>
+            <li class="item" href="contact.php">Contact</li>
+            <li class="item" href="services.php">Cum functioneaza</li>
         </ul>
     </footer>
     <script src="scripts/accordion.js"></script>

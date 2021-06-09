@@ -18,7 +18,7 @@
     <div class="container">
         <div class="background"></div>
         <header class="header">
-            <div class="title" href="mainpage.html">CleanAll</div>
+            <div class="title" href="mainpage.php">CleanAll</div>
         <div class="menu" onclick="showMenu()">
             <div class="menubutton">
                 <button class="options">
@@ -28,10 +28,10 @@
                 </button>
             </div>
         <nav  id="menubar" class="display-off">
-            <a class="item" href="contact.html">Contact</a>
-            <a class="item" href="services.html">Servicii</a>
-            <a class="item" href="login.html">Log-in</a>
-            <a class="item" href="register.html">Înregistrare</a>
+            <a class="item" href="contact.php">Contact</a>
+            <a class="item" href="services.php">Servicii</a>
+            <a class="item" href="login.php">Log-in</a>
+            <a class="item" href="register.php">Înregistrare</a>
         </nav>
         </div>
         </header>
@@ -144,11 +144,10 @@
     </div>
 
     <footer class="footer">
-        <div class="title" href="mainpage.html">CleanAll</div>
+        <div class="title" href="mainpage.php">CleanAll</div>
         <ul id="menubar">
-            <li class="item">Despre</li>
-            <li class="item">Contact</li>
-            <li class="item">Cum functioneaza</li>
+            <li class="item" href="contact.php">Contact</li>
+            <li class="item" href="services.php">Cum functioneaza</li>
         </ul>
     </footer>
     <script src="scripts/carousel.js"></script>
