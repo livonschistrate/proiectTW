@@ -1,86 +1,67 @@
+<?php 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="contact.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>CleA</title>
 </head>
 <body>
-    <div class="container">
-        <div class="background"></div>
-        <header class="header">
-            <div class="titleH"><a class="item" href =mainpage.html>CleanAll</a></div>
-        <div class="menu">
-        <div class="menubutton">
-                <button class="options">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </button>
-        </div>
-            <nav class="menubar">
-                <a class="item">Despre</a>
-                <a class="item" href="services.html">Servicii</a>
-                <a class="item" href="login.html">Log-in</a>
-                <a class="item" href="register.html">Înregistrare</a>
-            </nav>
-            </div>
-        </header>
-    </div>
     <h1 class="title"><span class="title2">Get in touch</span></h1>
     <div class="contact-container">
        <div class="contact">
-           <p>Telefon: 0745186148</p>
+           <p>Phone: 0745186148</p>
            <p>Email: CleA@uaic.ro</p>
        </div>
        <section class="openinghours">
         <div class="openinghourscontent section">
             <div class="header">
-                 <h2>Deschis intre orele:</h2>
+                 <h2>Opening hours</h2>
             </div>
             <table class="opening-hours-table">
                 <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
-                    <td>Luni</td>
+                    <td>Monday</td>
                     <td class="opens">09:00</td>
                     <td>-</td>
                     <td class="closes">21:00</td>
                 </tr>
                 <tr id="Tuesday" itemprop="openingHours" title="Open Tuesday at 9am to 6pm">
-
-                    <td>Marti</td>
+                    <td>Tuesday</td>
                     <td class="opens">09:00</td>
                     <td>-</td>
                     <td class="closes">21:00</td>
                 </tr>
                 <tr id="Wednesday" itemprop="openingHours" title="Open Wednesday at 9am to 6pm">
-                    <td>Miercuri</td>
+                    <td>Wednesday</td>
                     <td class="opens">09:00</td>
                     <td>-</td>
                     <td class="closes">21:00</td>
                 </tr>
                 <tr id="Thursday" itemprop="openingHours" title="Open Thursday at 9am to 8pm">
-
-                    <td>Joi</td>
+                    <td>Thursday</td>
                     <td class="opens">09:00</td>
                     <td>-</td>
                     <td class="closes">21:00</td>
                 </tr>
                 <tr id="Friday" itemprop="openingHours" title="Open Friday at 9am to 6pm">
-                    <td>Vineri</td>
+                    <td>Friday</td>
                     <td class="opens">09:00</td>
                     <td>-</td>
                     <td class="closes">21:00</td>
                 </tr>
                 <tr id="Saturday" itemprop="openingHours" title="Open Saturday at 10am to 6pm">
-                    <td>Sambata</td>
+                    <td>Saturday</td>
                     <td class="opens">10:00</td>
                     <td>-</td>
                     <td class="closes">19:30</td>
                 </tr>
                 <tr id="Sunday" itemprop="openingHours" title="Open Sunday at 11am to 4pm">
-                    <td>Duminica</td>
+                    <td>Sunday</td>
                     <td class="opens">11:00</td>
                     <td>-</td>
                     <td class="closes">19:30</td>
@@ -89,13 +70,5 @@
         </div>
     </section>
     </div>
-    <footer class="footer">
-        <div class="titleH" href="mainpage.html">CleanAll</div>
-        <ul class="menubar">
-            <li class="item">Despre</li>
-            <li class="item"><a href="contact.html">Contact</a></li>
-            <li class="item">Cum functioneaza</li>
-        </ul>
-    </footer>    
 </body>
 </html>
