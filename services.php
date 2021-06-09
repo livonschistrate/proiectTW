@@ -19,7 +19,7 @@
     <div class="container">
         <div class="background"></div>
         <header class="header">
-            <div class="title" href="mainpage.html">CleanAll</div>
+            <div class="title" href="mainpage.php">CleanAll</div>
         <div class="menu" onclick="showMenu()">
             <div class="menubutton">
                 <button class="options">
@@ -92,7 +92,7 @@
     </div>
 
     <footer class="footer">
-        <div class="title" href="mainpage.html">CleanAll</div>
+        <div class="title" href="mainpage.php">CleanAll</div>
         <ul id="menubar">
             <li class="item" href="contact.php">Contact</li>
             <li class="item" href="services.php">Cum functioneaza</li>

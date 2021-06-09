@@ -26,9 +26,9 @@ session_start();
         </div>
             <nav class="menubar">
                 <a class="item">Despre</a>
-                <a class="item" href="services.html">Servicii</a>
-                <a class="item" href="login.html">Log-in</a>
-                <a class="item" href="register.html">Înregistrare</a>
+                <a class="item" href="services.php">Servicii</a>
+                <a class="item" href="login.php">Log-in</a>
+                <a class="item" href="register.php">Înregistrare</a>
             </nav>
             </div>
         </header>
@@ -62,11 +62,10 @@ session_start();
     </form>     
 </div>    
 <footer class="footer">
-    <div class="titleH" href="mainpage.html">CleanAll</div>
+    <div class="titleH" href="mainpage.php">CleanAll</div>
     <ul class="menubar">
-        <li class="item">Despre</li>
-        <li class="item"><a href="contact.html">Contact</a></li>
-        <li class="item">Cum functioneaza</li>
+        <li class="item"><a href="contact.php">Contact</a></li>
+        <li class="item" href="services.php">Cum functioneaza</li>
     </ul>
 </footer>     
 </body>    
