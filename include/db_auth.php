@@ -2,9 +2,9 @@
 
 
 $host = '127.0.0.1';
-$db   = 'aistrate_proiecttw';
-$user = 'aistrate';
-$pass = '6u83vjko';
+$db   = 'proiecttw';
+$user = 'root';
+$pass = 'mysql1234';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
