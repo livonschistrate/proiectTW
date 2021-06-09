@@ -1,9 +1,9 @@
-body  
-{  
-    margin: 0;  
-    padding: 0;  
-    font-family: 'Arial';  
-}  
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial';
+}
 
 body::after{
     content:"";
@@ -19,25 +19,25 @@ body::after{
 
 }
 
-.login{  
-        width: 50%; 
-        margin: auto;  
-        padding: 10%;  
-        background: teal;  
-        border-radius: 3em;  
-        position:relative;
-        margin-left:15%; 
-        z-index: 1;
-        
-}  
+.login{
+    width: 50%;
+    margin: auto;
+    padding: 10%;
+    background: teal;
+    border-radius: 3em;
+    position:relative;
+    margin-left:15%;
+    z-index: 1;
+
+}
 .register{
     text-align: center;
 }
 
-.title{  
-    text-align: center;  
+.title{
+    text-align: center;
     padding: 3%;
-}  
+}
 .title2{
     background-color: whitesmoke;
     padding: 1em;
@@ -128,27 +128,27 @@ ul{
 input{
     margin-top:1em;
 }
-#Username{  
+#Username{
     width: 80%;
-    height: 2em;  
+    height: 2em;
     border: none;
     margin-left: 3.5em;
-}  
-#Password{  
+}
+#Password{
     width: 80%;
-    height: 2em;  
-    border: none; 
+    height: 2em;
+    border: none;
     margin-left: 3.5em;
-}  
-#log{  
-    width: 80%;  
-    height: 2em;  
-    border: none;  
-    border-radius: 1em; 
+}
+#log{
+    width: 80%;
+    height: 2em;
+    border: none;
+    border-radius: 1em;
     margin-left: 3.5em;
     margin-top: 1em;
     cursor:pointer;
-}  
+}
 
 #check{
     margin-left: 3.5em;
