@@ -522,7 +522,7 @@ a {color:inherit;}
 }
 .req-title{
     width: auto;
-    float: left;
+    /* float: left; */
     display: inline-block;
     line-height: 2.2em;
 }
