@@ -4,49 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Scholarly Document</title>
+    <title>CleanAll - Scholarly Document</title>
+    <link rel="stylesheet" href="https://w3c.github.io/scholarly-html/css/scholarly.min.css">
+    <script src="https://w3c.github.io/scholarly-html/js/scholarly.min.js"></script>
 </head>
 <body prefix="schema: http://schema.org">
     <header>
-        CleanAll - aplicatie web pentru servicii de spalatorie publica
+        <h1>CleanAll - aplicatie web pentru servicii de spalatorie publica</h1>
     </header>
-    <div>
+    <div role="contentinfo">
         <ol role="directory">
             <li>
-                <a href="#abstract">
+                <a href="#Abstract">
                     <span>1. </span>
                     Abstract
                 </a>
-                <p>
-                    CleanAll este o aplicatie bazata pe tehnologiile web si este creat
-                    pentru a usura oamenilor nevoia de a-si spala rufele.
-                </p>
             </li>
             <li>
-                <a href="#introducere">
+                <a href="#Introducere">
                     <span>2. </span>
                     Introducere
                 </a>
-                <p>
-                    CleanAll este proiectul nostru la Web Tehnologies. Ofera functionalitatea
-                    de a crea o comanda (pentru client), respectiv crearea unui status privind
-                    spalarea rufelor(disponibil numai pentru operatori).
-                </p>
             </li>
             <li>
-                <a href="#motivatie">
+                <a href="#Motivatie">
                     <span>3. </span>
                     Motivatie
                 </a>
             </li>
             <li>
-                <a href="#functionalitati">
+                <a href="#Functionalitati">
                     <span>4. </span>
                     Functionalitati
                 </a>
             </li>
             <li>
-                <a href="#referinte">
+                <a href="#Log-in">
+                    <span>4.1 </span>
+                    Log-in
+                </a>
+            </li>
+            <li>
+                <a href="#Register">
+                    <span>4.2 </span>
+                    Register
+                </a>
+            </li>
+            <li>
+                <a href="#Meniul">
+                    <span>4.3 </span>
+                    Meniul
+                </a>
+            </li>
+            <li>
+                <a href="#Dashboard">
+                    <span>4.4 </span>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#Lista-de-comenzi">
+                    <span>4.5 </span>
+                    Lista de comenzi
+                </a>
+            </li>
+            <li>
+                <a href="#Situatia-comenzilor">
+                    <span>4.6 </span>
+                    Situatia comenzilor
+                </a>
+            </li>
+            <li>
+                <a href="#Edit-command">
+                    <span>4.7 </span>
+                    Adaugarea/Editarea/Stergerea comenzilor
+                </a>
+            </li>
+            <li>
+                <a href="#Referinte">
                     <span>5. </span>
                     Referinte
                 </a>
@@ -55,11 +90,141 @@
 
         <dl>
             <dt>Autori</dt>
-            <p>Liviu Istrate, Call Laurentiu-Stefan</p>
-            <dt>Erori + recomandari</dt>
+                <dd>Liviu Istrate, Call Laurentiu-Stefan</dd>
 
         </dl>
-            
     </div>
+
+    <section typeof="sa:Abstract" id="Abstract" role="doc-abstract">
+        <h2>
+            <span>1.</span>
+            Abstract</h2>
+        <p>
+            CleanAll este o aplicatie bazata pe tehnologiile web si este creat
+            pentru a usura oamenilor nevoia de a-si spala rufele.
+        </p>
+    </section>
+
+    <section typeof="sa:Introducere" id="Introducere" role="doc-introducere">
+        <h2>
+            <span>2.</span>
+            Introducere</h2>
+        <p>
+            CleanAll este proiectul nostru la Web Tehnologies. Ofera functionalitatea
+            de a crea o comanda (pentru client), respectiv crearea unui status privind
+            spalarea rufelor(disponibil numai pentru operatori). Are urmatoarele functionalitati:
+            <ul>
+                <li>Posibilitatea clientilor de a face o cerere introducand detalii despre ce
+                rufe trebuiesc spalate/improspatate;
+                </li>
+                <li>Clientul are posibilitatea de a vedea care este statusul cererii, care este
+                    modificat deseori de catre curierat;
+                </li>
+                <li>Curieratul este notificat de disponibilitatea unei cereri;
+                </li>
+                <li>Cel care se ocupa cu livrarea si spalarea rufelor are posibilitatea sa
+                    notifice clientul de o neclaritate/problema;
+                </li>
+            </ul>
+        </p>
+    </section>
+
+    <section typeof="sa:Motivatie" id="Motivatie" role="doc-motivatie">
+        <h2>
+            <span>3.</span>
+            Motivatie</h2>
+        <p>Am realizat proiectul cu scopul de a afla care sunt provocarile pe care le implica
+        o astfel de sarcina si conceptul de "laundry-app" pe care se bazeaza.
+        </p>
+    </section>
+
+    <section typeof="sa:Functionalitati" id="Functionalitati" role="doc-functionalitati">
+        <h2>
+            <span>4.</span>
+            Functionalitati</h2>
+        <p>In aceasta parte vom prezenta functionalitatile aplicatiei, explicand rolul si
+            metoda de implementare fiecaruia.
+        </p>
+    </section>
+    <section typeof="sa:Functionalitati" id="Log-in" role="doc-login">
+        <h3>
+            <span>4.1.</span>
+            Log-in</h3>
+        <p>O cunoscuta componenta vizibila pentru utilizator este cea de log-in - implementata prin HTML si CSS.
+            Prin partea de log-in, utilizatorul se va inregistra in baza de date a aplicatiei si va avea permisiunea de a utiliza aplicatia.
+            Avem trei tipuri de utilizatori: clientul (care are rolul de a crea o cerere si a vedea istoricul cererilor), operatorul 
+            (persoana care se duce sa ia rufele dintr-un loc anume si sa le aduca inapoi curatate/improspatate) si adminul (care gestioneaza
+            atat operatorii, cat si clientii).
+        </p>
+    </section>
+    <section typeof="sa:Functionalitati" id="Register" role="doc-register">
+        <h3>
+            <span>4.2.</span>
+            Register</h3>
+        <p>Pe langa partea de log-in, exista si partea de register (inregistrare), ce necesita completarea cu numele, emailul si parola.
+            Aceste date vor fi inserate in baza de date a aplicatiei, rezultand in persoana avand posibilitatea de a utiliza aplicatia. 
+        </p>
+    </section>
+    <section typeof="sa:Functionalitati" id="Meniul" role="doc-menu">
+        <h3>
+            <span>4.3.</span>
+            Meniul</h3>
+        <p>Pentru a fi accesibila pe un ecran mai mic (cum ar fi telefonul), am implementat un meniu ce apare in partea de sus a
+            ecranului. Acesta este una dintre componentele de baza ale aplicatiei web intrucat ofera utilizatorilor actiunile care
+            pot fi intreprinse prin intermediul aplicatiei. Partea de front-end a acestuia a fost implementata folosind HTML, CSS si Javascript.
+            Meniul constituie din doua parti: una ce trimite utilizatorul atat la detaliile aplicatiei, cat si la partea de log-in/inregistrare,
+            iar cealalta ce duce la lista de comenzi facute (reprezentat intr-un tabel in HTML) si la partea de log-out (iesire din aplicatie).
+        </p>
+    </section>
+    <section typeof="sa:Functionalitati" id="Dashboard" role="doc-dashboard">
+        <h3>
+            <span>4.4.</span>
+            Dashboard</h3>
+        <p>Dashboard-ul aplicatiei include detalii legate de cererile facute pana acum, avand o implementare simpla de
+            HTML, CSS, inclusiv Javascript.
+        </p>
+    </section>
+    <section typeof="sa:Functionalitati" id="Lista-de-comenzi" role="doc-list">
+        <h3>
+            <span>4.5.</span>
+            Lista de comenzi</h3>
+        <p>Aceasta parte contine un tabel cu toate cererile create de client, avand data plasarii, data terminarii,
+            numarul de articole, tipurile de articole (indicat de <i>Nr. pozitii</i>) si statusurile acelor cereri.
+        </p>
+    </section>
+    <section typeof="sa:Functionalitati" id="Situatia-comenzilor" role="doc-status">
+        <h3>
+            <span>4.6.</span>
+            Situatia comenzilor</h3>
+        <p>Acele statusuri sunt facute pentru a notifica clientul de situatia comenzii, desigur, acesta poate fi actualizata
+        numai de operatorul responsabil de comanda respectiva.
+        </p>
+    </section>
+    <section typeof="sa:Functionalitati" id="Edit-command" role="doc-editcom">
+        <h3>
+            <span>4.7.</span>
+            Adaugarea/Editarea/Stergerea comenzilor</h3>
+        <p>Clientul are posibilitatea ori de a crea o comanda, introducand ce imbracaminte vrea sa puna la spalat, ori de a
+            o sterge, in cazul in care se razgandeste. Totodata, acesta poate sa modifice comanda, la fel, ori prin a adauga
+            mai multe haine in lista, ori prin a le sterge din lista. Pe langa comanda creata, poate sa modifice si data 
+            preluarii acelei comenzi.
+        </p>
+    </section>
+    <section typeof="sa:ReferenceList" id="Referinte" role="doc-bibliography"></section>
+        <h2>
+            <span>5.</span>
+            Bibliografie</h2>
+        <li>
+            <cite property="schema:name">
+                <a href="https://w3c.github.io/scholarly-html/">Scholarly HTML</a>
+                <span>, pentru documentatie</span>
+            </cite>
+        </li>
+        <li>
+            <cite property="schema:name">
+                <a href="www.rinse.com">Rinse</a>
+                <span> - unul dintre site-urile pe care le-am luat ca inspiratie</span>
+            </cite>
+        </li>
 </body>
 </html>
