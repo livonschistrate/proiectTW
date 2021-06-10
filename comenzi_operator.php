@@ -16,6 +16,7 @@ if ($_SESSION['level']<5) { // nu este cel putin rang de operator
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@500&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fonts/awesome/css/all.min.css">
     <script src="js/lib.js"></script>
+    <script src="scripts/mainbutton.js"></script>
 </head>
 <body>
 <div class="container">

@@ -48,7 +48,7 @@
                 <img class="laundry-image" src="images/laundryroom.jpg">
             
             <div class="image-to-button"></div>
-            <button class="signup">Programează-ți prima preluare!</button>
+            <button class="signup" href="register.php">Programează-ți prima preluare!</button>
         </div>
     </div>
 

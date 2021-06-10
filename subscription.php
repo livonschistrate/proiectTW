@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="subscription.css">
     <link rel="stylesheet" href="css/mainstyle.css">
+    <script src="scripts/mainbutton.js"></script>
     <title>CleA</title>
 </head>
 <body>

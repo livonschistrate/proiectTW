@@ -10,13 +10,14 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="login.css">
     <link rel="stylesheet" href="css/mainstyle.css">
+    <script src="scripts/mainbutton.js"></script>
     <title>CleA</title>
 </head>
 <body>    
     <div class="container">
         <div class="background"></div>
         <header class="header">
-            <div class="titleH"><a class="item" href ="index.html">CleanAll</a></div>
+            <div class="titleH"><a class="item" href ="index.php">CleanAll</a></div>
         <div class="menu">
         <div class="menubutton">
                 <button class="options">
@@ -53,7 +54,7 @@ session_start();
         <br><br>    
         Am uitat <a href="#">parola</a>   
         <br><br>
-        <span class ="register">Nu ai un cont facut? <a href="register.html"> Inscrie-te</a></span>
+        <span class ="register">Nu ai un cont facut? <a href="register.php"> Inscrie-te</a></span>
     </form>     
 </div>
 <footer class="footer">
