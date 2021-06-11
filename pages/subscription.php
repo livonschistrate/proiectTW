@@ -8,16 +8,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="subscription.css">
-    <link rel="stylesheet" href="css/mainstyle.css">
-    <script src="scripts/mainbutton.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/subscription.css">
+    <link rel="stylesheet" href="../css/mainstyle.css">
+    <script src="../scripts/mainbutton.js"></script>
     <title>CleA</title>
 </head>
 <body>
     <div class="container">
         <div class="background"></div>
         <header class="header">
-            <div class="titleH"><a class="item" href ="index.php">CleanAll</a></div>
+            <div class="titleH"><a class="item" href ="../index.php">CleanAll</a></div>
         <div class="menu">
         <div class="menubutton">
                 <button class="options">
@@ -27,7 +27,7 @@
                 </button>
         </div>
             <nav class="menubar">
-                <a class="item" href="index.php">Despre</a>
+                <a class="item" href="../index.php">Despre</a>
                 <a class="item" href="services.php">Servicii</a>
                 <a class="item" href="login.php">Log-in</a>
                 <a class="item" href="register.php">Înregistrare</a>
@@ -35,7 +35,7 @@
             </div>
         </header>
     </div>
-    <h2 class="title"><span class="title2">Acestea sunt ofertele noastre</span></h1>
+    <h2 class="title"><span class="title2">Acestea sunt ofertele noastre</span></h2>
     <div class="subscription-container">
     <div class="subscription-option">
         <h3 class="subscription-header">1 cos</h3>

@@ -9,11 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services</title>
-    <link rel="stylesheet" href="css/mainstyle.css">
-    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="../css/mainstyle.css">
+    <link rel="stylesheet" href="../css/services.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@500&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
-    <script src="scripts/mainbutton.js"></script>
+    
 </head>
 <body>
     <div class="container">
@@ -87,7 +87,7 @@
         <div class="wsquare">
             <p class="priceboxtitle"> PRETURI </p>
             <br>
-            <a href="subscription.php" class="priceboxtitle pbtlink"> Vezi abonamentele aici </a>
+            <a href="subscription.html" class="priceboxtitle pbtlink"> Vezi abonamentele aici </a>
         </div>
     </div>
 
@@ -98,7 +98,7 @@
             <li class="item" href="services.php">Cum functioneaza</li>
         </ul>
     </footer>
-    <script src="scripts/accordion.js"></script>
-    <script src="scripts/mainbutton.js"></script>
+    <script src="../scripts/accordion.js"></script>
+    <script src="../scripts/mainbutton.js"></script>
 </body>
 </html>

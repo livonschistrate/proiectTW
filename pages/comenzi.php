@@ -1,6 +1,6 @@
 <?php
-include "include/auth.php";
-include "include/db_auth.php";
+include "../include/auth.php";
+include "../include/db_auth.php";
 
 ?>
 
@@ -11,17 +11,17 @@ include "include/db_auth.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CleanAll</title>
-    <link rel="stylesheet" href="css/mainstyle.css">
+    <link rel="stylesheet" href="../css/mainstyle.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@500&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/awesome/css/all.min.css">
-    <script src="js/lib.js"></script>
-    <script src="js/comenzi.js"></script>
+    <link rel="stylesheet" href="../fonts/awesome/css/all.min.css">
+    <script src="../js/lib.js"></script>
+    <script src="../js/comenzi.js"></script>
 
 </head>
 <body>
 
-<?php include "include/navigation.php"?>
+<?php include "../include/navigation.php" ?>
 
 <div class="main-content">
     <div class="content">

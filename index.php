@@ -28,10 +28,10 @@
                 </button>
             </div>
         <nav  id="menubar" class="display-off">
-            <a class="item" href="contact.php">Contact</a>
-            <a class="item" href="services.php">Servicii</a>
-            <a class="item" href="login.php">Log-in</a>
-            <a class="item" href="register.php">Înregistrare</a>
+            <a class="item" href="pages/contact.php">Contact</a>
+            <a class="item" href="pages/services.php">Servicii</a>
+            <a class="item" href="pages/login.php">Log-in</a>
+            <a class="item" href="pages/register.php">Înregistrare</a>
         </nav>
         </div>
         </header>
