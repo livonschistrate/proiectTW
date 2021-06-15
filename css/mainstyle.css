@@ -14,7 +14,7 @@ html, body{
     position: fixed;
     width: 100%;
     height: 100%;
-    background-image: url(images/pattern.png);
+    background-image: url(../images/pattern.png);
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -41,17 +41,18 @@ html, body{
     }
 }
 
-.title{
+.h-title{
     margin: 0.5em;
     margin-left: 1.5em;
     font-size: 2.5em;
     font-weight: bold;
-    /* float: left; */
+    float: left;
     color: rgb(130, 238, 188);
     font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
 }
 
-.title:hover{
+.h-title:hover{
     cursor: pointer;
 }
 
@@ -242,7 +243,14 @@ a {color:inherit;}
     background-color: rgb(54, 145, 145);
     color: white;
     font-family: 'Raleway', sans-serif;
+    text-align: center;
+    text-decoration: none;
 }
+
+.signup .btext{
+    padding-top: 0.5em;
+}
+
 @media (max-width: 1295px){
 
     .our-services .wsquare{
@@ -328,7 +336,7 @@ a {color:inherit;}
 
 .carousel > button{
     position: absolute;
-    padding-top: 3em;
+    margin-top: 3em;
     z-index: 1;
 }
 
@@ -374,9 +382,6 @@ a {color:inherit;}
     font-size: 2em;
 }
 
-#rightBtn{
-    margin-left: 2em;
-}
 
 
 @media (max-width: 1295px){
@@ -414,7 +419,8 @@ a {color:inherit;}
     }
 
     .carousel > button{
-        padding-top: 7em;
+        margin-top: 9em;
+        padding-top: unset;
     }
 
     .im-1{
@@ -464,18 +470,19 @@ a {color:inherit;}
 
 
 /* dashboard, comenzi */
-.main-content::after{
-    content:"";
-    background: url('https://cdn.discordapp.com/attachments/829781645396803634/829797995607359518/pattern.png');
-    overflow: hidden;
-    opacity:0.3;
-    top:0;
-    bottom: -0%;
-    left: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-}
+/*.main-content::after{*/
+/*    content:"";*/
+/*    background: url('https://cdn.discordapp.com/attachments/829781645396803634/829797995607359518/pattern.png');*/
+/*    overflow: hidden;*/
+/*    opacity:0.3;*/
+/*    top:0;*/
+/*    bottom: -0%;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    position: absolute;*/
+/*    z-index: -1;*/
+/*}*/
+
 .content{
     width:90vw;
     margin:auto;
@@ -485,6 +492,7 @@ a {color:inherit;}
     border:solid 1px #a0a0a0;
     background: #ffffff;
     box-shadow: 0px 2px 11px 5px rgb(0 0 0 / 20%);
+    margin-bottom: 3em;
 }
 .req-list{
     font-size: 0.9em;
@@ -498,14 +506,15 @@ a {color:inherit;}
     width: 40vw;
     min-width: 30em;
     background: #ffffff;
-    padding: 2em;
+    padding: 3em;
     font-size: 1.2em;
     border: solid 1px #a0a0a0;
     border-radius: 5px;
     box-shadow: 0px 2px 11px 5px rgb(0 0 0 / 20%);
     left: 10%;
-    position: absolute;
-    margin-top: 4em;
+    position: relative;
+    margin-top: 8em;
+    margin-bottom: 8em;
 }
 .req-header {
     padding: 1em;

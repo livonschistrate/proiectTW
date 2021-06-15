@@ -5,20 +5,6 @@ body
     font-family: 'Arial';
 }
 
-body::after{
-    content:"";
-    background: url('https://cdn.discordapp.com/attachments/829781645396803634/829797995607359518/pattern.png');
-    overflow: hidden;
-    opacity:0.6;
-    top:0;
-    bottom: -30%;
-    left: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-
-}
-
 .login{
     width: 50%;
     margin: auto;
@@ -28,7 +14,7 @@ body::after{
     position:relative;
     margin-left:15%;
     z-index: 1;
-
+    margin-bottom: 8em;
 }
 .register{
     text-align: center;
@@ -128,19 +114,14 @@ ul{
 input{
     margin-top:1em;
 }
-#Username{
+#Email, #Password{
     width: 80%;
     height: 2em;
     border: none;
     margin-left: 3.5em;
 }
-#Password{
-    width: 80%;
-    height: 2em;
-    border: none;
-    margin-left: 3.5em;
-}
-#log{
+
+#btnLogin{
     width: 80%;
     height: 2em;
     border: none;

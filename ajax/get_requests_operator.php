@@ -58,7 +58,7 @@ if (count($reqs)>0) { // exista comenzi pentru utilizatorul conectat
         $html .= '<tr>';
         $html .= '<td>'.($i+1).'</td>';
         $html .= '<td>'.$reqs[$i]['id_request'].'</td>';
-        $html .= '<td>'.$reqs[$i]['lastname'].' '.$reqs[$i]['firstname'].'</td>';
+        $html .= '<td>'.$reqs[$i]['firstname'].' '.$reqs[$i]['lastname'].'</td>';
         $html .= '<td>'.$reqs[$i]['data_start'].'</td>';
         $html .= '<td>'.$reqs[$i]['data_end'].'</td>';
         $html .= '<td>'.$reqs[$i]['positions'].'</td>';

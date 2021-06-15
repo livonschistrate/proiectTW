@@ -21,12 +21,12 @@ function check_login(){
             alert('A apărut o eroare. Vă rugăm să reîncărcați pagina și să reluați operația.');
         }
     };
-    var uname = document.getElementById("Username").value;
+    var email = document.getElementById("Email").value;
     var passw = document.getElementById("Password").value;
 
 
     xhttp.open("POST", '../ajax/check_login.php', true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 //    xhttp.send("array="+JSON.stringify({username:uname, password:passw}));
-    xhttp.send("username="+ uname + "&password=" + passw);
+    xhttp.send("email="+ email + "&password=" + passw);
 }

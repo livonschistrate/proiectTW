@@ -134,12 +134,7 @@ include "../include/db_auth.php";
     </div>
 </div>
 
-<!--div pentru afisarea mesajelor din partea aplicatiei -->
-<div id="alert_message" class="alert-message">
-    <i class="fa fa-times close-req" onclick="close_alert();"></i>
-    <div id="alert-content" class="alert-content">
-    </div>
-</div>
+<?php include "../include/footer.php" ?>
 
 
 </body>

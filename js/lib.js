@@ -46,7 +46,7 @@ function do_logout(){
             }
         }
     };
-    xhttp.open("POST", 'ajax/logout.php', true);
+    xhttp.open("POST", '../ajax/logout.php', true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send();
 }

@@ -19,7 +19,7 @@
     <div class="container">
         <div class="background"></div>
         <header class="header">
-            <div class="title" href="index.php">CleanAll</div>
+            <div class="h-title" href="index.php">CleanAll</div>
         <div class="menu" onclick="showMenu()">
             <div class="menubutton">
                 <button class="options">
@@ -87,15 +87,15 @@
         <div class="wsquare">
             <p class="priceboxtitle"> PRETURI </p>
             <br>
-            <a href="subscription.html" class="priceboxtitle pbtlink"> Vezi abonamentele aici </a>
+            <a href="subscription.php" class="priceboxtitle pbtlink"> Vezi abonamentele aici </a>
         </div>
     </div>
 
     <footer class="footer">
-        <div class="title" href="index.php">CleanAll</div>
+        <div class="h-title" href="index.php">CleanAll</div>
         <ul id="menubar">
-            <li class="item" href="contact.php">Contact</li>
-            <li class="item" href="services.php">Cum functioneaza</li>
+            <a href="contact.php" class="item">Contact</a>
+            <a href="services.php" class="item">Cum functioneaza</a>
         </ul>
     </footer>
     <script src="../scripts/accordion.js"></script>

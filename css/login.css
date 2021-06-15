@@ -142,19 +142,14 @@ ul{
 input{
     margin-top:1em;
 }
-#Username{  
+#Firstname, #Lastname, #Email, #Password, #CPassword{
     width: 80%;
     height: 2em;  
     border: none;
     margin-left: 3.5em;
-}  
-#Password{  
-    width: 80%;
-    height: 2em;  
-    border: none; 
-    margin-left: 3.5em;
-}  
-#log{  
+}
+
+#btnRegister{
     width: 80%;  
     height: 2em;  
     border: none;  

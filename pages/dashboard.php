@@ -16,6 +16,7 @@ include "../include/db_auth.php";
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@500&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
     <script src="../js/lib.js"></script>
+    <script src="../scripts/mainbutton.js"></script>
 </head>
 <body>
 
@@ -78,6 +79,8 @@ include "../include/db_auth.php";
     </div>
 
 </div>
+
+<?php include "../include/footer.php" ?>
 
 </body>
 </html>

@@ -27,7 +27,7 @@ function load_requests(){
          }
       }
    };
-   xhttp.open("POST", 'ajax/get_requests_operator.php', true);
+   xhttp.open("POST", '../ajax/get_requests_operator.php', true);
    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
    xhttp.send();
 }
@@ -89,7 +89,7 @@ function save_req(){
          show_alert(result['message']);
       }
    };
-   xhttp.open("POST", 'ajax/save_request_operator.php', true);
+   xhttp.open("POST", '../ajax/save_request_operator.php', true);
    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
    xhttp.send("id_request="+getId('id_request').value+"&data_start="+getId('data_start').value+"&state="+getId('state').value);
    getId("req-articles-list").innerHTML = '<div class="loading"></div>';
@@ -115,7 +115,7 @@ function delete_req(id_request) {
             show_alert(result['message']);
          }
       };
-      xhttp.open("POST", 'ajax/delete_request.php', true);
+      xhttp.open("POST", '../ajax/delete_request.php', true);
       xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhttp.send("id_request="+id_request);
    }
@@ -143,7 +143,7 @@ function load_articles(){
          }
       }
    };
-   xhttp.open("POST", 'ajax/get_articles.php', true);
+   xhttp.open("POST", '../ajax/get_articles.php', true);
    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
    xhttp.send("id_request="+getId('id_request').value);
 }
@@ -175,7 +175,7 @@ function save_article(){
          show_alert(result['message']);
       }
    };
-   xhttp.open("POST", 'ajax/save_article.php', true);
+   xhttp.open("POST", '../ajax/save_article.php', true);
    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
    xhttp.send("id_request="+getId('id_request').value+"&id_article="+getId('id_article').value+"&type="+getId('article_type').value+"&material="+getId('material').value+"&quantity="+getId('quantity').value);
 }
@@ -200,7 +200,7 @@ function delete_article(id_article) {
             show_alert(result['message']);
          }
       };
-      xhttp.open("POST", 'ajax/delete_article.php', true);
+      xhttp.open("POST", '../ajax/delete_article.php', true);
       xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhttp.send("id_article="+id_article);
    }
@@ -230,7 +230,7 @@ function load_request() {
          }
       }
    };
-   xhttp.open("POST", 'ajax/get_request.php', true);
+   xhttp.open("POST", '../ajax/get_request.php', true);
    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
    xhttp.send("id_request="+getId('id_request').value);
 
@@ -257,7 +257,7 @@ function load_article() {
          }
       }
    };
-   xhttp.open("POST", 'ajax/get_article.php', true);
+   xhttp.open("POST", '../ajax/get_article.php', true);
    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
    xhttp.send("id_article="+getId('id_article').value);
 

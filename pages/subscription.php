@@ -17,7 +17,7 @@
     <div class="container">
         <div class="background"></div>
         <header class="header">
-            <div class="titleH"><a class="item" href ="../index.php">CleanAll</a></div>
+            <div class="h-title"><a class="item" href ="../index.php">CleanAll</a></div>
         <div class="menu">
         <div class="menubutton">
                 <button class="options">
@@ -84,10 +84,10 @@
     </div>
     </div>
     <footer class="footer">
-        <div class="titleH" href="index.php">CleanAll</div>
+        <div class="h-title" href="index.php">CleanAll</div>
         <ul class="menubar">
-            <li class="item"><a href="contact.php">Contact</a></li>
-            <li class="item">Cum functioneaza</li>
+            <a href="pages/contact.php" class="item">Contact</a>
+            <a href="pages/services.php" class="item">Cum functioneaza</a>
         </ul>
     </footer>   
 </body>

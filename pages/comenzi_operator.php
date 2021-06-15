@@ -1,6 +1,6 @@
 <?php
-include "include/auth.php";
-include "include/db_auth.php";
+include "../include/auth.php";
+include "../include/db_auth.php";
 
 if ($_SESSION['level']<5) { // nu este cel putin rang de operator
     ?>
@@ -22,7 +22,7 @@ if ($_SESSION['level']<5) { // nu este cel putin rang de operator
 <div class="container">
     <div class="background"></div>
     <header class="header">
-        <div class="title" href="#" onclick="go_to_dashboard();">CleanAll</div>
+        <div class="h-title" href="#" onclick="go_to_dashboard();">CleanAll</div>
         <div class="menu" onclick="showMenu()">
             <div class="menubutton">
                 <button class="options">
@@ -64,7 +64,7 @@ if ($_SESSION['level']<5) { // nu este cel putin rang de operator
 </head>
 <body>
 
-<?php include "include/navigation.php" ?>
+<?php include "../include/navigation.php" ?>
 
 <div class="main-content">
     <div class="content">
@@ -192,13 +192,7 @@ if ($_SESSION['level']<5) { // nu este cel putin rang de operator
     </div>
 </div>
 
-<!--div pentru afisarea mesajelor din partea aplicatiei -->
-<div id="alert_message" class="alert-message">
-    <i class="fa fa-times close-req" onclick="close_alert();"></i>
-    <div id="alert-content" class="alert-content">
-    </div>
-</div>
-
+<?php include "../include/footer.php" ?>
 
 </body>
 </html>

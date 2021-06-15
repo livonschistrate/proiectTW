@@ -11,13 +11,15 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link rel="stylesheet" href="../css/mainstyle.css">
     <script src="../scripts/mainbutton.js"></script>
+    <script src="../js/registration.js"></script>
+    <script src="../js/lib.js"></script>
     <title>CleA</title>
 </head>
 <body>    
     <div class="container">
         <div class="background"></div>
         <header class="header">
-            <div class="titleH"><a class="item" href ="../index.php">CleanAll</a></div>
+            <div class="h-title"><a class="item" href ="../index.php">CleanAll</a></div>
         <div class="menu">
         <div class="menubutton">
                 <button class="options">
@@ -27,7 +29,7 @@ session_start();
                 </button>
         </div>
             <nav class="menubar">
-                <a class="item" href ="../index.php">Despre</a>
+                <a class="item" href ="contact.php">Contact</a>
                 <a class="item" href="services.php">Servicii</a>
                 <a class="item" href="login.php">Log-in</a>
                 <a class="item" href="register.php">Înregistrare</a>
@@ -36,12 +38,17 @@ session_start();
         </header>
     </div>
     <div class="login">    
-    <form>    
+    <form>
         <label>
-            <b>Numele complet</b>    
-        </label>    
-        <input type="text" name="fname" id ="Username"placeholder="Introduceti numele complet" required>    
-        <br><br> 
+            <b>Prenume</b>
+        </label>
+        <input type="text" name="fname" id ="Firstname"placeholder="Prenume" required>
+        <br><br>
+        <label>
+            <b>Nume</b>
+        </label>
+        <input type="text" name="lname" id ="Lastname"placeholder="Nume" required>
+        <br><br>
         <label>
             <b>Adresa de email</b>    
         </label>    
@@ -55,20 +62,17 @@ session_start();
         <label>
             <b>Confirmati parola</b>    
         </label>    
-        <input type="Password" name="password" id="Password" placeholder="Confirmati parola" required>    
+        <input type="Password" name="password" id="CPassword" placeholder="Confirmati parola" required>
         <br><br>
         <input type="checkbox" id="check" required>    
         <span id="agree">Sunt de acord cu termenii si conditiile</span>  
         <br><br> 
-        <button type="submit" name="log" id="log">Inregistrare</button>    
+        <button type="button" id="btnRegister" onclick="check_register(this);">Inregistrare</button>
     </form>     
 </div>    
-<footer class="footer">
-    <div class="titleH" href="index.php">CleanAll</div>
-    <ul class="menubar">
-        <li class="item"><a href="contact.php">Contact</a></li>
-        <li class="item" href="services.php">Cum functioneaza</li>
-    </ul>
-</footer>     
+<?php
+ include "../include/footer.php";
+
+?>
 </body>    
 </html>     

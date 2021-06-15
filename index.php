@@ -18,7 +18,7 @@
     <div class="container">
         <div class="background"></div>
         <header class="header">
-            <div class="title" href="index.php">CleanAll</div>
+            <div class="h-title" href="index.php">CleanAll</div>
         <div class="menu" onclick="showMenu()">
             <div class="menubutton">
                 <button class="options">
@@ -48,7 +48,9 @@
                 <img class="laundry-image" src="images/laundryroom.jpg">
             
             <div class="image-to-button"></div>
-            <button class="signup" href="register.php">Programează-ți prima preluare!</button>
+            <a class="signup" href="pages/register.php">
+                <div class="btext">Programează-ți prima preluare!</div>
+            </a>
         </div>
     </div>
 
@@ -144,10 +146,10 @@
     </div>
 
     <footer class="footer">
-        <div class="title" href="index.php">CleanAll</div>
+        <div class="h-title" href="index.php">CleanAll</div>
         <ul id="menubar">
-            <li class="item" href="contact.php">Contact</li>
-            <li class="item" href="services.php">Cum functioneaza</li>
+            <a href="pages/contact.php" class="item">Contact</a>
+            <a href="pages/services.php" class="item">Cum functioneaza</a>
         </ul>
     </footer>
     <script src="scripts/carousel.js"></script>

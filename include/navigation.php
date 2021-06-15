@@ -6,7 +6,7 @@
 <div class="container">
     <div class="background"></div>
     <header class="header">
-        <div class="title" href="#" onclick="go_to_dashboard();">CleanAll</div>
+        <div class="h-title" href="#" onclick="go_to_dashboard();">CleanAll</div>
         <div class="menu" onclick="showMenu()">
             <div class="menubutton">
                 <button class="options">
@@ -30,4 +30,5 @@
             </nav>
         </div>
     </header>
+
 </div>

@@ -10,9 +10,9 @@ $ret = array();
 $sql = "SELECT * 
         FROM users 
         WHERE 
-            email='".trim($_POST['username'])."' 
+            email='".trim($_POST['email'])."' 
             AND 
-            password='".trim($_POST['password'])."';";
+            password=MD5('".trim($_POST['password'])."');";
 
 // se cauta utilizatorul in baza de date pornind de la username/email si parola
 $user = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
@@ -24,6 +24,7 @@ if (count($user)>0) { // a fost gasit utilizatorul (cu parola) in baza de date, 
     $_SESSION['level'] = $user[0]['level'];
     $_SESSION['id_user'] = $user[0]['id_user'];
     $_SESSION['name'] = $user[0]['firstname'].' '.$user[0]['lastname'];
+    $_SESSION['email'] = $user[0]['email'];
 
 } else {  // utilizator inexistent sau parola gresita
 
@@ -33,6 +34,7 @@ if (count($user)>0) { // a fost gasit utilizatorul (cu parola) in baza de date, 
     $_SESSION['level'] = 0;
     $_SESSION['id_user'] = 0;
     $_SESSION['name'] = '';
+    $_SESSION['email'] = '';
 
 }
 
