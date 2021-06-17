@@ -2,7 +2,7 @@
 include "../include/auth.php";
 include "../include/db_auth.php";
 
-if ($_SESSION['level']<5) { // nu este cel putin rang de operator
+if ($_SESSION['level']<10) { // nu este rang de administrator
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +41,7 @@ if ($_SESSION['level']<5) { // nu este cel putin rang de operator
 </div>
 </body>
 </html>
-    <?php
+<?php
     die();
 }
 
@@ -60,7 +60,7 @@ if ($_SESSION['level']<5) { // nu este cel putin rang de operator
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@500&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../fonts/awesome/css/all.min.css">
     <script src="../js/lib.js"></script>
-    <script src="../js/comenzi_operator.js"></script>
+    <script src="../js/edit_utlizatori.js"></script>
 </head>
 <body>
 
@@ -69,8 +69,8 @@ if ($_SESSION['level']<5) { // nu este cel putin rang de operator
 <div class="main-content">
     <div class="content">
         <div class="req-header">
-            <div class="req-title">Comenzi</div>
-            <i class="fa fa-2x fa-plus-circle add-req" onclick="show_request(0);" title="Adaugă o comandă"></i>
+            <div class="req-title">Utilizatori</div>
+            <i class="fa fa-2x fa-plus-circle add-req" onclick="show_request(0);" title="Adaugă un utlizatori"></i>
         </div>
         <div id="reqs" class="reqs">
 

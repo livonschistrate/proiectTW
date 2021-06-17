@@ -25,6 +25,8 @@ $sql = "SELECT
             ON a.id_article_type = t.id_article_type
         LEFT JOIN materials AS m
             ON a.id_material = m.id_material
+        LEFT JOIN prices AS p
+            ON a.id_article_type = p.id_article_type AND a.id_material = p.id_material 
         WHERE id_request = '".$id_request."' ;";
 
 // se extrag toate articolele pentru o comanda
@@ -32,20 +34,24 @@ $articles = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 if (count($articles)>0) { // exista articole pentru cererea curenta
 
     $html = '<table class="table1">';
+    $html .= '<thead>';
     $html .= '<tr>';
     $html .= '<th style="width:10%;">Nr. crt</th>';
     $html .= '<th style="width:15%;">Cantitate</th>';
     $html .= '<th>Tip articol</th>';
     $html .= '<th>Material</th>';
+    $html .= '<th>Pret</th>';
     $html .= '<th style="width:15%;">Acțiuni</th>';
     $html .= '</tr>';
+    $html .= '</thead>';
 
     for($i=0;$i<count($articles);$i++) {
         $html .= '<tr>';
-        $html .= '<td>'.($i+1).'</td>';
-        $html .= '<td>'.$articles[$i]['quantity'].'</td>';
-        $html .= '<td>'.$articles[$i]['article_name'].'</td>';
-        $html .= '<td>'.$articles[$i]['material_name'].'</td>';
+        $html .= '<td data-label="Nr. crt:">&nbsp;'.($i+1).'</td>';
+        $html .= '<td data-label="Cantitate:">&nbsp;'.$articles[$i]['quantity'].'</td>';
+        $html .= '<td data-label="Tip articol:">&nbsp;'.$articles[$i]['article_name'].'</td>';
+        $html .= '<td data-label="Material:">&nbsp;'.$articles[$i]['material_name'].'</td>';
+        $html .= '<td data-label="Pret:">&nbsp;'.$articles[$i]['price'].'</td>';
         $html .= '<td><i class="fa fa-edit btn-edit" onclick="show_article(\''.$articles[$i]['id_article'].'\')"></i> <i class="fa fa-trash btn-delete" onclick="delete_article(\''.$articles[$i]['id_article'].'\')"></i></td>';
         $html .= '</tr>';
     }

@@ -19,8 +19,8 @@ if (!isset($_POST['id_request']) || !isset($_POST['data_start'])) { // nu au ven
 $id_request = intval(trim($_POST['id_request']));
 
 if ( $id_request==0) { //  este necesara adaugarea unei noi cereri
-    $sql = "INSERT INTO requests (id_user, data_start, id_state) 
-                           VALUES(".$_SESSION['id_user'].",'".$_POST['data_start']."',0);";
+    $sql = "INSERT INTO requests (id_user, data_start, id_state, id_paid) 
+                           VALUES(".$_SESSION['id_user'].",'".$_POST['data_start']."',0,0);";
     $db->exec($sql);
     $id_request = $db->lastInsertId(); // se recupereaza id-ul cererii introduse in baza de date
     $ret['id_request'] = $id_request; // se intoarce ca raspuns in pagina id-ul cererii
@@ -29,7 +29,7 @@ if ( $id_request==0) { //  este necesara adaugarea unei noi cereri
     $ret['message'] = 'Datele comenzii au fost salvate.<br>Pot fi adăugate articole la comandă.';
 
 } else { // se doreste actualizarea unei cereri existente
-    $sql = "UPDATE requests SET data_start='".$_POST['data_start']."', id_state='".$_POST['state']."' 
+    $sql = "UPDATE requests SET data_start='".$_POST['data_start']."', id_state='".$_POST['state']."', id_paid='".$_POST['id_paid']."'
                            WHERE id_request=".$id_request.";";
     $db->exec($sql);
     $ret['id_request'] = $id_request; // se intoarce ca raspuns in pagina id-ul cererii

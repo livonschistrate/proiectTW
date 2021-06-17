@@ -22,7 +22,9 @@
                     } elseif ($_SESSION['level']<=5) {
                         echo '<a class="item" href="#" onclick="go_to_comenzi_operator();">Comenzi</a>';
                     } else {
-
+                        echo '<a class="item" href="#" onclick="go_to_edit_utilizatori();">Utilizatori</a>';
+                        echo '<a class="item" href="#" onclick="go_to_edit_tipuri_articole();">Articole</a>';
+                        echo '<a class="item" href="#" onclick="go_to_edit_preturi();">Preturi</a>';
                     }
                 ?>
 

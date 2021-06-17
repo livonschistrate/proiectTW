@@ -33,6 +33,18 @@ function go_to_comenzi_operator() {
     window.location.href="comenzi_operator.php";
 }
 
+function go_to_edit_utilizatori() {
+    window.location.href="edit_utilizatori.php";
+}
+
+function go_to_edit_tipuri_articole() {
+    window.location.href="edit_tipuri_articole.php";
+}
+
+function go_to_edit_preturi() {
+    window.location.href="edit_preturi.php";
+}
+
 // functie care face logout, apeleaza prin AJAX logout.php si cand vine raspunsul redirectioneaza la pagina de login
 function do_logout(){
     var xhttp = ajaxReq();
