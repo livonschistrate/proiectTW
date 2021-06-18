@@ -60,7 +60,7 @@ if ($_SESSION['level']<10) { // nu este rang de administrator
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@500&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../fonts/awesome/css/all.min.css">
     <script src="../js/lib.js"></script>
-    <script src="../js/edit_utilizatori.js"></script>
+    <script src="../js/edit_utlizatori.js"></script>
 </head>
 <body>
 
@@ -70,7 +70,7 @@ if ($_SESSION['level']<10) { // nu este rang de administrator
     <div class="content">
         <div class="req-header">
             <div class="req-title">Utilizatori</div>
-            <i class="fa fa-2x fa-plus-circle add-req" onclick="show_user(0);" title="Adaugă un utlizator"></i>
+            <i class="fa fa-2x fa-plus-circle add-req" onclick="show_request(0);" title="Adaugă un utlizatori"></i>
         </div>
         <div id="reqs" class="reqs">
 
@@ -78,43 +78,134 @@ if ($_SESSION['level']<10) { // nu este rang de administrator
     </div>
 </div>
 
-<!--div pentru schimbarea nivelului-->
-<div id="user" class="modal">
+<!--div pentru adaugarea/editarea unei comenzi-->
+<div id="request" class="modal">
     <div class="modal-content modal-request">
-        <input type="hidden" id="id_user" value="0">
+        <input type="hidden" id="id_request" value="0">
         <div>
-            <div class="req-title">Editare rol utilizator</div>
+            <div class="req-title">Editare comandă</div>
             <i class="fa fa-times close-req" id="close_req" onclick="close_req();"></i>
         </div>
         <div class="req-form">
             <div style="display: inline-block;float: left;line-height: 2.4em;margin-right: 1em;margin-bottom: 1em;">
-                Nr. user: <label id="nr_user" class="req-nr">--</label>
+                Nr. comandă: <label id="nr_request" class="req-nr">--</label>
             </div>
-
+            <div style="display: inline-block;float: left;line-height: 2.4em;margin-right: 1em;margin-bottom: 1em;">
+                Data preluării: <input id="data_start" type="date" class="req-date">
+            </div>
             <div style="display: inline-block;float: left;line-height: 2.4em;margin-bottom: 1em;">
-                Rolul utilizatorului:
-                <select id="id_role" class="req-select">
+                Status:
+                <select id="state" class="req-select">
                     <?php
-                    // se afiseaza lista cu tipurile de roluri existente in baza de date
+                    // se afiseaza lista cu tipurile de materiale existente in baza de date
                     $sql = "SELECT * 
-                                    FROM user_role 
-                                    ORDER BY id_role;";
+                                    FROM states 
+                                    ORDER BY id_state;";
                     $states = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
                     for($i=0;$i<count($states);$i++){
-                        echo '<option value="'.$states[$i]['id_role'].'"> '.$states[$i]['name'];
+                        echo '<option value="'.$states[$i]['id_state'].'"> '.$states[$i]['name'];
                     }
                     ?>
                 </select>
             </div>
-
-            <input type="button" value="Salvează" style="float:right;" onclick="save_user();">
+            <div style="display: inline-block;float: left;line-height: 2.4em;margin-bottom: 1em;">
+                Plată achitată:
+                <select id="id_paid" class="req-select">
+                    <?php
+                    // se afiseaza lista cu tipurile de materiale existente in baza de date
+                    $sql = "SELECT * 
+                                    FROM paid_status 
+                                    ORDER BY id_paid;";
+                    $states = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                    for($i=0;$i<count($states);$i++){
+                        echo '<option value="'.$states[$i]['id_paid'].'"> '.$states[$i]['name'];
+                    }
+                    ?>
+                </select>
+            </div>
+            <input type="button" value="Salvează" style="float:right;" onclick="save_req();">
         </div>
+        <div class="req-article-header">
+            <div class="req-article-title">Lista articole</div>
+            <i class="fa fa-2x fa-plus-circle add-req" onclick="show_article(0);"></i>
+        </div>
+        <div id="req-articles-list" class="req-article-list">
 
-
+        </div>
     </div>
 </div>
 
+<!--div pentru adaugarea sau editarea unui articol la o comanda-->
+<div id="add_article" class="modal-article">
+    <input type="hidden" id="id_article" value="0">
+    <div class="article">
+        <div>
+            <div class="req-title">Editare articol</div>
+            <i class="fa fa-times close-req" id="close_art" onclick="close_add_art();"></i>
+        </div>
+        <div class="req-form">
+            <div class="article-row">
+                <div class="article-col-1">
+                    Tip
+                </div>
+                <div class="article-col-2">
+                    <select id="article_type" class="req-select">
+                        <?php
+                            // se afiseaza lista cu tipurile de articole existente in baza de date
+                            $sql = "SELECT * 
+                                    FROM article_types 
+                                    ORDER BY article_name;";
+                            $article_types = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                            for($i=0;$i<count($article_types);$i++){
+                                echo '<option value="'.$article_types[$i]['id_article_type'].'"> '.$article_types[$i]['article_name'];
+                            }
+                        ?>
+                    </select>
 
+                </div>
+            </div>
+            <div class="article-row">
+                <div class="article-col-1">
+                    Material
+                </div>
+                <div class="article-col-2">
+                    <select id="material" class="req-select">
+                        <?php
+                        // se afiseaza lista cu tipurile de materiale existente in baza de date
+                        $sql = "SELECT * 
+                                    FROM materials 
+                                    ORDER BY material_name;";
+                        $materials = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                        for($i=0;$i<count($materials);$i++){
+                            echo '<option value="'.$materials[$i]['id_material'].'"> '.$materials[$i]['material_name'];
+                        }
+                        ?>
+                    </select>
+
+                </div>
+            </div>
+            <div class="article-row">
+                <div class="article-col-1">
+                    Cantitate
+                </div>
+                <div class="article-col-2">
+                    <select id="quantity" class="req-select">
+                        <?php
+                        // se afiseaza lista cu numerele pentru cantitate
+                        for($i=1;$i<=25;$i++){
+                            echo '<option value="'.$i.'"> '.$i;
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="article-row" >
+                <input type="button" value="Salvează" style="float:right;" onclick="save_article();">
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <?php include "../include/footer.php" ?>
 
