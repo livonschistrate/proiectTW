@@ -4,7 +4,7 @@ session_start();
 // se reseteaza variabilele sesiune
 $_SESSION['logged_in']=0;
 $_SESSION['logged_in'] = 0;
-$_SESSION['level'] = 0;
+$_SESSION['id_role'] = 0;
 $_SESSION['id_user'] = 0;
 $_SESSION['name'] = '';
 

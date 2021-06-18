@@ -69,7 +69,7 @@ session_start();
 </footer>
 
 <?php
-echo getenv('CLEARDB_DATABASE_URL');
+
 ?>
 
 </body>

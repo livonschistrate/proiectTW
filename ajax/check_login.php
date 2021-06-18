@@ -21,7 +21,7 @@ if (count($user)>0) { // a fost gasit utilizatorul (cu parola) in baza de date, 
     $ret['login_ok'] = 1;
     $ret['message'] = 'Login OK!';
     $_SESSION['logged_in'] = 1;
-    $_SESSION['level'] = $user[0]['level'];
+    $_SESSION['level'] = $user[0]['id_role'];
     $_SESSION['id_user'] = $user[0]['id_user'];
     $_SESSION['name'] = $user[0]['firstname'].' '.$user[0]['lastname'];
     $_SESSION['email'] = $user[0]['email'];
