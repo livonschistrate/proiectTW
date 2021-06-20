@@ -17,6 +17,7 @@ include "../include/db_auth.php";
     <link rel="stylesheet" href="../fonts/awesome/css/all.min.css">
     <script src="../js/lib.js"></script>
     <script src="../js/comenzi.js"></script>
+    <script src="../scripts/mainbutton.js"></script>
 
 </head>
 <body>
@@ -25,10 +26,27 @@ include "../include/db_auth.php";
 
 <div class="main-content">
     <div class="content">
+        <input type="hidden" id="sort_col" value="1">
+        <input type="hidden" id="sort_order" value="0">
+
         <div class="req-header">
             <div class="req-title">Comenzile dvs.</div>
             <i class="fa fa-2x fa-plus-circle add-req" onclick="show_request(0);" title="Adaugă o comandă"></i>
         </div>
+        <div class="pagination">
+            Pag.
+            <select id="crt_page" class="req-select" style="margin-right: 4px;" onchange="reload_data();">
+                <option value="1" selected>1</option>
+            </select>
+            Nr./pag.
+            <select id="reqs_per_page" class="req-select" style="margin-right: 4px;" onchange="reload_data();">
+                <option value="10">10
+                <option value="20">20
+                <option value="50">50
+                <option value="100">100
+            </select>
+        </div>
+
         <div id="reqs" class="reqs">
 
         </div>

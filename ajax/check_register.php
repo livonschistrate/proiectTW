@@ -21,8 +21,8 @@ $deja_user = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 if(count($deja_user)==0){
 
     $sql = "INSERT INTO users 
-    (firstname, lastname, email,password,id_role)
-    VALUES ('".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['email']."','".MD5($_POST['password'])."',1)";
+    (firstname, lastname, email,password,id_role,is_validated,is_deleted,is_enabled,register_date)
+    VALUES ('".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['email']."','".MD5($_POST['password'])."',1,0,0,1,NOW())";
     $db -> exec($sql);
     $id_user = $db->lastInsertId();
     $ret['id_user'] = $id_user;

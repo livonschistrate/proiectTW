@@ -22,6 +22,12 @@ function load_requests(){
 
          if (result['code'] == 1) { // ok, se afiseaza rezultatul
             getId("reqs").innerHTML = result['html'];
+            getId('crt_page').options.length = 0;
+            for(i=0;i<result['nr_pages'];i++) {
+               var selected = false;
+               if ( i+1 == parseInt(result['crt_page']) ) selected = true;
+               getId('crt_page').options[i] = new Option(i+1, i+1, selected, selected);
+            }
          } else {
             show_alert('A apărut o eroare. Vă rugăm să reîncărcați pagina și să reluați operația.');
          }
@@ -29,7 +35,7 @@ function load_requests(){
    };
    xhttp.open("POST", '../ajax/get_requests_operator.php', true);
    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-   xhttp.send();
+   xhttp.send(encodeURI("sort_col="+getId('sort_col').value+"&sort_order="+getId('sort_order').value+"&reqs_per_page="+getId('reqs_per_page').value+"&crt_page="+getId('crt_page').value));
 }
 
 // functie care afiseaza div-ul pentru adugarea/editarea unei comenzi
@@ -91,7 +97,7 @@ function save_req(){
    };
    xhttp.open("POST", '../ajax/save_request_operator.php', true);
    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-   xhttp.send("id_request="+getId('id_request').value+"&data_start="+getId('data_start').value+"&state="+getId('state').value+"&id_paid="+getId('id_paid').value);
+   xhttp.send(encodeURI("id_request="+getId('id_request').value+"&data_start="+getId('data_start').value+"&state="+getId('state').value+"&id_paid="+getId('id_paid').value));
    getId("req-articles-list").innerHTML = '<div class="loading"></div>';
 }
 
@@ -261,4 +267,17 @@ function load_article() {
    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
    xhttp.send("id_article="+getId('id_article').value);
 
+}
+
+function sort(col) {
+   if (getId('sort_order').value=='1') order=0;
+   else order=1;
+   //order = !order;
+   getId('sort_order').value = order;
+   getId('sort_col').value = col;
+   setTimeout(load_requests,1);
+}
+
+function reload_data(){
+   setTimeout(load_requests,1);
 }

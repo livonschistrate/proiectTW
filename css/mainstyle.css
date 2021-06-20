@@ -730,6 +730,12 @@ input, .req-select{
     background-color: #DCECEC;
 }
 
+.table1 thead tr th.sortable {
+    cursor:pointer;
+}
+.sort-green {
+    color: #016c1d;
+}
 .btn-edit, .btn-delete{
     cursor: pointer;
     font-size:1.1em;
@@ -750,6 +756,12 @@ input, .req-select{
     background: url('../images/ajax-loader-green.gif') 50% 50% no-repeat;
 }
 
+.pagination{
+    width:100%;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
 /* end comenzi */
 
 
