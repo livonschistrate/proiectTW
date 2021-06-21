@@ -111,7 +111,7 @@
             Introducere</h2>
         <p>
             CleanAll este proiectul nostru la Web Tehnologies. Ofera functionalitatea
-            de a crea o comanda (pentru client), respectiv crearea unui status privind
+            de a crea o comanda (pentru client), respectiv crearea si actualizarea unui status privind
             spalarea rufelor(disponibil numai pentru operatori). Are urmatoarele functionalitati:
             <ul>
                 <li>Posibilitatea clientilor de a face o cerere introducand detalii despre ce
@@ -124,6 +124,10 @@
                 </li>
                 <li>Cel care se ocupa cu livrarea si spalarea rufelor are posibilitatea sa
                     notifice clientul de o neclaritate/problema;
+                </li>
+                <li>
+                    Operatorul are posibilitatea de a filtra comenzile dupa un criteriu:
+                    numarul comenzii, data plasarii/terminarii, status etc.
                 </li>
             </ul>
         </p>
@@ -153,7 +157,7 @@
         <p>O cunoscuta componenta vizibila pentru utilizator este cea de log-in - implementata prin HTML si CSS.
             Prin partea de log-in, utilizatorul se va inregistra in baza de date a aplicatiei si va avea permisiunea de a utiliza aplicatia.
             Avem trei tipuri de utilizatori: clientul (care are rolul de a crea o cerere si a vedea istoricul cererilor), operatorul 
-            (persoana care se duce sa ia rufele dintr-un loc anume si sa le aduca inapoi curatate/improspatate) si adminul (care gestioneaza
+            (persoana care se duce sa ia rufele dintr-un loc anume si le aduce inapoi curatate/improspatate) si adminul (care gestioneaza
             atat operatorii, cat si clientii).
         </p>
     </section>
@@ -161,7 +165,7 @@
         <h3>
             <span>4.2.</span>
             Register</h3>
-        <p>Pe langa partea de log-in, exista si partea de register (inregistrare), ce necesita completarea cu numele, emailul si parola.
+        <p>Pe langa partea de log-in, exista si partea de register (inregistrare), ce necesita completarea cu numele, prenumele, emailul si parola.
             Aceste date vor fi inserate in baza de date a aplicatiei, rezultand in persoana avand posibilitatea de a utiliza aplicatia. 
         </p>
     </section>
@@ -190,6 +194,9 @@
             Lista de comenzi</h3>
         <p>Aceasta parte contine un tabel cu toate cererile create de client, avand data plasarii, data terminarii,
             numarul de articole, tipurile de articole (indicat de <i>Nr. pozitii</i>) si statusurile acelor cereri.
+            Utilizatorii au posibilitatea de a sorta crescator/descrescator fiecare coloana din acel tabel. Filtrarea
+            este o alta functionalitate ce ajuta la selectarea comenzilor dupa un anumit tip, si este folositoare pentru
+            operatorii aplicatiei.
         </p>
     </section>
     <section typeof="sa:Functionalitati" id="Situatia-comenzilor" role="doc-status">
@@ -210,9 +217,27 @@
             preluarii acelei comenzi.
         </p>
     </section>
-    <section typeof="sa:ReferenceList" id="Referinte" role="doc-bibliography"></section>
+    <section typeof="sa:Diagram" id="Diagrame" role="doc-diagram">
         <h2>
             <span>5.</span>
+            Diagrama aplicatiei
+        </h2>
+        <p> </p>
+        <img src="images/DiagramApp.png" style="width:65em;">
+    </section>
+    
+    <section typeof="sa:futureImplement" id="futureImplement" role="doc-fimpl">
+        <h2>
+            <span>7.</span>
+            Ce ar mai putea fi implementat
+        </h2>
+        <p> </p>
+        <li></li>
+        <li></li>
+    </section>
+    <section typeof="sa:ReferenceList" id="Referinte" role="doc-bibliography"></section>
+        <h2>
+            <span>8.</span>
             Bibliografie</h2>
         <li>
             <cite property="schema:name">
@@ -224,6 +249,14 @@
             <cite property="schema:name">
                 <a href="www.rinse.com">Rinse</a>
                 <span> - unul dintre site-urile pe care le-am luat ca inspiratie</span>
+            </cite>
+        </li>
+        <li>
+            <cite property="schema:name">
+                <a href="www.php.net">PHP.net</a>
+                <span> - pentru informatii despre MD5, PDO (PHP Data Object) si preluare informatii
+                    cu PHP si SQL
+                </span>
             </cite>
         </li>
 </body>
