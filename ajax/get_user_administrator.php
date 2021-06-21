@@ -8,7 +8,7 @@ include "../include/auth_ajax.php";
 $ret['code'] = 99;
 $ret['message'] = 'A apărut o eroare, reîncărcați pagina și reluați operația.';
 
-$id_user = intval(trim($_SESSION['id_user']));
+$id_user = intval(trim($_POST['id_user']));
 
 
 if ($id_user==0) {
@@ -36,6 +36,9 @@ if ($id_user==0) {
         $ret['lastname'] = $user['lastname'];
         $ret['address'] = $user['address'];
         $ret['email'] = $user['email'];
+        $ret['id_role'] = $user['id_role'];
+        $ret['validated'] = $user['is_validated'];
+        $ret['enabled'] = $user['is_enabled'];
 
         $ret['code'] = 1;
         $ret['message'] = 'ok';
@@ -47,6 +50,10 @@ if ($id_user==0) {
         $ret['lastname'] = '';
         $ret['address'] = '';
         $ret['email'] = '';
+        $ret['id_role'] = '';
+        $ret['validated'] = '';
+        $ret['enabled'] = '';
+
         $ret['code'] = 99;
         $ret['message'] = 'Informațiile utilizatorului nu au fost găsite. Reîncărcați pagina și reluați operația.';
     }

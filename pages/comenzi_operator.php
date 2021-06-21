@@ -71,12 +71,18 @@ if ($_SESSION['level']<5) { // nu este cel putin rang de operator
     <div class="content">
         <input type="hidden" id="sort_col" value="1">
         <input type="hidden" id="sort_order" value="0">
+        <input type="hidden" id="filter_data_start" value="">
+        <input type="hidden" id="filter_id_user" value="0">
+        <input type="hidden" id="filter_id_state" value="-1">
+        <input type="hidden" id="filter_id_paid" value="-1">
 
         <div class="req-header">
-            <div class="req-title">Comenzi</div>
+            <div class="req-title"> Comenzi  <label id="filter_text" style="margin-left:3px"></label> </div>
             <i class="fa fa-2x fa-plus-circle add-req" onclick="show_request(0);" title="Adaugă o comandă"></i>
+            <i class="fa fa-2x fa-filter filter-req" onclick="filter_request();" title="Filtrare comenzi"></i>
         </div>
         <div class="pagination">
+            <label id="nr_reqs" style="margin-left:3px;float: left;"></label>
             Pag.
             <select id="crt_page" class="req-select" style="margin-right: 4px;" onchange="reload_data();">
                 <option value="1" selected>1</option>
@@ -105,43 +111,63 @@ if ($_SESSION['level']<5) { // nu este cel putin rang de operator
             <i class="fa fa-times close-req" id="close_req" onclick="close_req();"></i>
         </div>
         <div class="req-form">
-            <div style="display: inline-block;float: left;line-height: 2.4em;margin-right: 1em;margin-bottom: 1em;">
-                Nr. comandă: <label id="nr_request" class="req-nr">--</label>
+            <div class="article-row">
+                <div class="article-col-1">
+                    Nr. comandă:
+                </div>
+                <div class="article-col-2">
+                    <label id="nr_request" class="req-nr">--</label>
+                </div>
             </div>
-            <div style="display: inline-block;float: left;line-height: 2.4em;margin-right: 1em;margin-bottom: 1em;">
-                Data preluării: <input id="data_start" type="date" class="req-date">
+            <div class="article-row">
+                <div class="article-col-1">
+                    Data preluării:
+                </div>
+                <div class="article-col-2">
+                    <input id="data_start" type="date" class="req-date">
+                </div>
             </div>
-            <div style="display: inline-block;float: left;line-height: 2.4em;margin-bottom: 1em;">
-                Status:
-                <select id="state" class="req-select">
-                    <?php
-                    // se afiseaza lista cu tipurile de materiale existente in baza de date
-                    $sql = "SELECT * 
+            <div class="article-row">
+                <div class="article-col-1">
+                    Status:
+                </div>
+                <div class="article-col-2">
+                    <select id="state" class="req-select">
+                        <?php
+                        // se afiseaza lista cu tipurile de materiale existente in baza de date
+                        $sql = "SELECT * 
                                     FROM states 
                                     ORDER BY id_state;";
-                    $states = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-                    for($i=0;$i<count($states);$i++){
-                        echo '<option value="'.$states[$i]['id_state'].'"> '.$states[$i]['name'];
-                    }
-                    ?>
-                </select>
+                        $states = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                        for($i=0;$i<count($states);$i++){
+                            echo '<option value="'.$states[$i]['id_state'].'"> '.$states[$i]['name'];
+                        }
+                        ?>
+                    </select>
+                </div>
             </div>
-            <div style="display: inline-block;float: left;line-height: 2.4em;margin-bottom: 1em;">
-                Plată achitată:
-                <select id="id_paid" class="req-select">
-                    <?php
-                    // se afiseaza lista cu tipurile de materiale existente in baza de date
-                    $sql = "SELECT * 
+            <div class="article-row">
+                <div class="article-col-1">
+                    Plată achitată:
+                </div>
+                <div class="article-col-2">
+                    <select id="id_paid" class="req-select">
+                        <?php
+                        // se afiseaza lista cu tipurile de materiale existente in baza de date
+                        $sql = "SELECT * 
                                     FROM paid_status 
                                     ORDER BY id_paid;";
-                    $states = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-                    for($i=0;$i<count($states);$i++){
-                        echo '<option value="'.$states[$i]['id_paid'].'"> '.$states[$i]['name'];
-                    }
-                    ?>
-                </select>
+                        $states = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                        for($i=0;$i<count($states);$i++){
+                            echo '<option value="'.$states[$i]['id_paid'].'"> '.$states[$i]['name'];
+                        }
+                        ?>
+                    </select>
+                </div>
             </div>
-            <input type="button" value="Salvează" style="float:right;" onclick="save_req();">
+            <div class="article-row">
+                <input type="button" value="Salvează" style="float:right;" onclick="save_req();">
+            </div>
         </div>
         <div class="req-article-header">
             <div class="req-article-title">Lista articole</div>
@@ -224,6 +250,92 @@ if ($_SESSION['level']<5) { // nu este cel putin rang de operator
         </div>
     </div>
 </div>
+
+<!--div pentru filtrarea tabelului comenzilor -->
+<div id="req_filter" class="modal">
+    <div class="modal-content modal-request">
+        <input type="hidden" id="id_request" value="0">
+        <div>
+            <div class="req-title">Filtrare comenzi</div>
+            <i class="fa fa-times close-req" id="close_filter" onclick="close_filter();"></i>
+        </div>
+        <div class="req-form">
+            <div class="article-row">
+                <div class="article-col-1">
+                    Data preluării:
+                </div>
+                <div class="article-col-2">
+                    <input id="data_start_filter" type="date" class="req-date">
+                </div>
+            </div>
+            <div class="article-row">
+                <div class="article-col-1">
+                    Client:
+                </div>
+                <div class="article-col-2">
+                    <select id="id_user_filter" class="req-select">
+                        <?php
+                        echo '<option value="0">Oricare';
+                        $sql = "SELECT * 
+                                    FROM users 
+                                    WHERE id_role=1
+                                    ORDER BY lastname, firstname;";
+                        $clienti = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                        for($i=0;$i<count($clienti);$i++) {
+                            echo '<option value="'.$clienti[$i]['id_user'].'">'.$clienti[$i]['lastname'].' '.$clienti[$i]['firstname'];
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="article-row">
+                <div class="article-col-1">
+                    Stare:
+                </div>
+                <div class="article-col-2">
+                    <select id="id_state_filter" class="req-select">
+                        <?php
+                        echo '<option value="-1">Oricare';
+                        $sql = "SELECT * 
+                                    FROM states
+                                    ORDER BY id_state;";
+                        $states = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                        for($i=0;$i<count($states);$i++) {
+                            echo '<option value="'.$states[$i]['id_state'].'">'.$states[$i]['name'];
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="article-row">
+                <div class="article-col-1">
+                    Achitate:
+                </div>
+                <div class="article-col-2">
+                    <select id="id_paid_filter" class="req-select">
+                        <?php
+                        echo '<option value="-1">Oricare';
+                        $sql = "SELECT * 
+                                    FROM paid_status
+                                    ORDER BY id_paid;";
+                        $states = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                        for($i=0;$i<count($states);$i++) {
+                            echo '<option value="'.$states[$i]['id_paid'].'">'.$states[$i]['name'];
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="article-row">
+                <input type="button" value="Filtrează" style="float:right;" onclick="do_filter_requests();">
+                <input type="button" value="Sterge filtre" style="float:right;margin-right: 1em;" onclick="do_clear_filter();">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 <?php include "../include/footer.php" ?>
 

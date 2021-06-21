@@ -16,6 +16,21 @@ if ($_SESSION['level']<5) { // nu este cel putin rang de operator
 $ret = array();
 $ret['code'] = 99;
 
+$where = ' WHERE true ';
+if (isset($_POST['filter_data_start']) && $_POST['filter_data_start']!='') {
+    $where .= " AND r.data_start='".$_POST['filter_data_start']."' ";
+}
+if (isset($_POST['filter_id_user']) && $_POST['filter_id_user']!='' && $_POST['filter_id_user']!='0') {
+    $where .= " AND r.id_user='".$_POST['filter_id_user']."' ";
+}
+if (isset($_POST['filter_id_state']) && $_POST['filter_id_state']!='' && $_POST['filter_id_state']!='-1') {
+    $where .= " AND r.id_state='".$_POST['filter_id_state']."' ";
+}
+if (isset($_POST['filter_id_paid']) && $_POST['filter_id_paid']!='' && $_POST['filter_id_paid']!='-1') {
+    $where .= " AND r.id_paid='".$_POST['filter_id_paid']."' ";
+}
+
+
 $sql = "SELECT COUNT(*) AS cate FROM
         (SELECT
             r.id_request,
@@ -42,6 +57,7 @@ $sql = "SELECT COUNT(*) AS cate FROM
                 ON a.id_article_type = p.id_article_type AND a.id_material = p.id_material 
             LEFT JOIN paid_status AS ps
                 ON ps.id_paid = r.id_paid
+        ".$where."
         GROUP BY r.id_request) AS t1; ";
 
 $nr_reqs = $db->query($sql)->fetch(PDO::FETCH_ASSOC)['cate'];
@@ -124,7 +140,8 @@ $sql= "SELECT
                 ON a.id_article_type = p.id_article_type AND a.id_material = p.id_material 
             LEFT JOIN paid_status AS ps
                 ON ps.id_paid = r.id_paid
-        GROUP BY r.id_request 
+        ".$where."
+        GROUP BY r.id_request         
         ".$sort_sql." 
         LIMIT ".($crt_page-1).", ".($reqs_per_page).";";
 
@@ -146,7 +163,7 @@ if (count($reqs)>0) { // exista comenzi pentru utilizatorul conectat
     $html .= '<th style="width:10%;" class="sortable" onclick="sort(7);" ><div style="float: left;width:80%;text-align: center;">Preț</div>'.$sort_indicator[7].'</th>';
     $html .= '<th style="width:10%;" class="sortable" onclick="sort(8);" ><div style="float: left;width:80%;text-align: center;">Achitată</div>'.$sort_indicator[8].'</th>';
     $html .= '<th style="width:15%;" class="sortable" onclick="sort(9);" ><div style="float: left;width:80%;text-align: center;">Status</div>'.$sort_indicator[9].'</th>';
-    $html .= '<th style="width:10%;">Acțiuni</th>';
+    $html .= '<th style="width:10%;min-width:100px;">Acțiuni</th>';
     $html .= '</tr>';
     $html .= '</thead>';
 
@@ -172,6 +189,7 @@ if (count($reqs)>0) { // exista comenzi pentru utilizatorul conectat
     $ret['message'] = 'ok';
     $ret['html'] = $html;
     $ret['nr_pages'] = $nr_pages;
+    $ret['nr_reqs'] = $nr_reqs;
     $ret['crt_page'] = $crt_page;
 
 } else {  // nicio comanda nu a fost gasita in baza de date pentru utilizatorul conectat
@@ -180,6 +198,7 @@ if (count($reqs)>0) { // exista comenzi pentru utilizatorul conectat
     $ret['message'] = 'ok';
     $ret['html'] = '<div class="no-results">Nu există nicio comandă înregistrată în sistem.</div>';
     $ret['nr_pages'] = 1;
+    $ret['nr_reqs'] = $nr_reqs;
     $ret['crt_page'] = 1;
 
 }

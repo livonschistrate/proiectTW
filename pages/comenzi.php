@@ -62,11 +62,21 @@ include "../include/db_auth.php";
             <i class="fa fa-times close-req" id="close_req" onclick="close_req();"></i>
         </div>
         <div class="req-form">
-            <div style="display: inline-block;float: left;line-height: 2.5em;margin-right: 3em;margin-bottom: 1em;">
-                Nr. comandă: <label id="nr_request" class="req-nr">--</label>
+            <div class="article-row">
+                <div class="article-col-1">
+                    Nr. comandă:
+                </div>
+                <div class="article-col-2">
+                    <label id="nr_request" class="req-nr">--</label>
+                </div>
             </div>
-            <div style="display: inline-block;float: left;margin-bottom: 1em;">
-                Data preluării: <input id="data_start" type="date" class="req-date">
+            <div class="article-row">
+                <div class="article-col-1">
+                    Data preluării:
+                </div>
+                <div class="article-col-2">
+                    <input id="data_start" type="date" class="req-date">
+                </div>
             </div>
             <input type="button" value="Salvează" style="float:right;margin-bottom: 1em;" onclick="save_req();">
         </div>

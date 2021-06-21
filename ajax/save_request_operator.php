@@ -29,7 +29,8 @@ if ( $id_request==0) { //  este necesara adaugarea unei noi cereri
     $ret['message'] = 'Datele comenzii au fost salvate.<br>Pot fi adăugate articole la comandă.';
 
 } else { // se doreste actualizarea unei cereri existente
-    $sql = "UPDATE requests SET data_start='".$_POST['data_start']."', id_state='".$_POST['state']."', id_paid='".$_POST['id_paid']."'
+    $sql = "UPDATE requests SET data_start='".$_POST['data_start']."', id_state='".$_POST['state']."', id_paid='".$_POST['id_paid']."',
+                            data_end=IF('".$_POST['state']."'=3,NOW(),NULL)
                            WHERE id_request=".$id_request.";";
     $db->exec($sql);
     $ret['id_request'] = $id_request; // se intoarce ca raspuns in pagina id-ul cererii

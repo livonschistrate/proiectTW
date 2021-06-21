@@ -39,13 +39,8 @@ function load_users(){
 }
 
 // functie care afiseaza div-ul pentru adugarea/editarea unei comenzi
-function show_user(id_req) {
-   //getId("reqs").innerHTML = '<div class="loading"></div>';
-   getId('id_user').value = id_req;
-
-   // cand se adauga o comanda noua se pune pe 0 id-ul de la articol
-   //getId('id_article').value = 0;
-
+function show_user(id_user) {
+   getId('id_user').value = id_user;
    var req_window = getId('user');
    req_window.style.display = "block";
    setTimeout(load_user,1);
@@ -83,7 +78,7 @@ function save_user(){
    };
    xhttp.open("POST", '../ajax/save_user.php', true);
    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-   xhttp.send(encodeURI("id_user="+getId('id_user').value+"&id_role="+getId('id_role').value));
+   xhttp.send(encodeURI("id_user="+getId('id_user').value+"&id_role="+getId('id_role').value+"&validated="+getId('validated').value+"&enabled="+getId('enabled').value));
    //getId("req-articles-list").innerHTML = '<div class="loading"></div>';
 }
 
@@ -98,9 +93,9 @@ function load_user() {
          var result = JSON.parse(this.responseText);
 
          if (result['code'] == 1) { // ok, se afiseaza rezultatul
-
-
             getId('id_role').value = result['id_role'];
+            getId('validated').value = result['validated'];
+            getId('enabled').value = result['enabled'];
             console.log('>>>'+result['id_user']);
             if (parseInt(result['id_user'])==0) {
                getId('nr_user').innerHTML = "--";
@@ -113,7 +108,7 @@ function load_user() {
          }
       }
    };
-   xhttp.open("POST", '../ajax/get_user.php', true);
+   xhttp.open("POST", '../ajax/get_user_administrator.php', true);
    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
    xhttp.send("id_user="+getId('id_user').value);
 

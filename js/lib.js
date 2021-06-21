@@ -45,6 +45,10 @@ function go_to_edit_preturi() {
     window.location.href="edit_preturi.php";
 }
 
+function go_to_setari_utilizator() {
+    window.location.href="setari_utilizator.php";
+}
+
 // functie care face logout, apeleaza prin AJAX logout.php si cand vine raspunsul redirectioneaza la pagina de login
 function do_logout(){
     var xhttp = ajaxReq();

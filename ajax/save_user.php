@@ -21,14 +21,16 @@ $id_user = intval(trim($_POST['id_user']));
 if ( $id_user==0) {
 
 } else { // se doreste actualizarea rolului unui user existent
-    $sql = "UPDATE users SET id_role='".$_POST['id_role']."'
+    $sql = "UPDATE users SET id_role='".$_POST['id_role']."',
+                            is_validated=".intval($_POST['validated']).",
+                            is_enabled=".intval($_POST['enabled'])."
                            WHERE id_user=".$id_user.";";
     $db->exec($sql);
     $ret['id_user'] = $id_user; // se intoarce ca raspuns in pagina id-ul cererii
     $ret['code'] = 1;
-    $ret['message'] = 'Datele comenzii au fost actualizate.';
+    $ret['message'] = 'Datele utilizatorului au fost actualizate.';
 }
 
-// se intoarce raspunsul spre pagina care a apelat via AJAX save_request.php
+// se intoarce raspunsul spre pagina care a apelat via AJAX
 echo json_encode($ret);
 die();

@@ -61,6 +61,7 @@ if ($_SESSION['level']<10) { // nu este rang de administrator
     <link rel="stylesheet" href="../fonts/awesome/css/all.min.css">
     <script src="../js/lib.js"></script>
     <script src="../js/edit_utilizatori.js"></script>
+    <script src="../scripts/mainbutton.js"></script>
 </head>
 <body>
 
@@ -104,27 +105,58 @@ if ($_SESSION['level']<10) { // nu este rang de administrator
             <i class="fa fa-times close-req" id="close_req" onclick="close_req();"></i>
         </div>
         <div class="req-form">
-            <div style="display: inline-block;float: left;line-height: 2.4em;margin-right: 1em;margin-bottom: 1em;">
-                Nr. user: <label id="nr_user" class="req-nr">--</label>
+            <div class="article-row">
+                <div class="article-col-1">
+                    Id. user:
+                </div>
+                <div class="article-col-2">
+                    <label id="nr_user" class="req-nr">--</label>
+                </div>
             </div>
-
-            <div style="display: inline-block;float: left;line-height: 2.4em;margin-bottom: 1em;">
-                Rolul utilizatorului:
-                <select id="id_role" class="req-select">
-                    <?php
-                    // se afiseaza lista cu tipurile de roluri existente in baza de date
-                    $sql = "SELECT * 
+            <div class="article-row">
+                <div class="article-col-1">
+                    Rolul utilizatorului:
+                </div>
+                <div class="article-col-2">
+                    <select id="id_role" class="req-select">
+                        <?php
+                        // se afiseaza lista cu tipurile de roluri existente in baza de date
+                        $sql = "SELECT * 
                                     FROM user_role 
                                     ORDER BY id_role;";
-                    $states = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-                    for($i=0;$i<count($states);$i++){
-                        echo '<option value="'.$states[$i]['id_role'].'"> '.$states[$i]['name'];
-                    }
-                    ?>
-                </select>
+                        $states = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                        for($i=0;$i<count($states);$i++){
+                            echo '<option value="'.$states[$i]['id_role'].'"> '.$states[$i]['name'];
+                        }
+                        ?>
+                    </select>
+                </div>
             </div>
-
-            <input type="button" value="Salvează" style="float:right;" onclick="save_user();">
+            <div class="article-row">
+                <div class="article-col-1">
+                    Validat:
+                </div>
+                <div class="article-col-2">
+                    <select id="validated" class="req-select">
+                        <option value="0">Nevalidat</option>
+                        <option value="1">Validat</option>
+                    </select>
+                </div>
+            </div>
+            <div class="article-row">
+                <div class="article-col-1">
+                    Activ:
+                </div>
+                <div class="article-col-2">
+                    <select id="enabled" class="req-select">
+                        <option value="0">Inactiv</option>
+                        <option value="1">Activ</option>
+                    </select>
+                </div>
+            </div>
+            <div class="article-row">
+                <input type="button" value="Salvează" style="float:right;" onclick="save_user();">
+            </div>
         </div>
 
 

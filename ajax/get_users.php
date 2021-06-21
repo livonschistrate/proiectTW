@@ -109,9 +109,9 @@ if (count($reqs)>0) { // exista comenzi pentru utilizatorul conectat
     $html .= '<th style="width:10%;" class="sortable" onclick="sort(3);" ><div style="float: left;width:80%;text-align: center;">Email</div>'.$sort_indicator[3].'</th>';
     $html .= '<th style="width:10%;" class="sortable" onclick="sort(4);" ><div style="float: left;width:80%;text-align: center;">Adresa</div>'.$sort_indicator[4].'</th>';
     $html .= '<th style="width:15%;" class="sortable" onclick="sort(5);" ><div style="float: left;width:80%;text-align: center;">Rol</div>'.$sort_indicator[5].'</th>';
-    $html .= '<th style="width:15%;">Validat</th>';
-    $html .= '<th style="width:15%;">Șters</th>';
-    $html .= '<th style="width:15%;">Activat</th>';
+    $html .= '<th style="width:15%;">Valid</th>';
+    //$html .= '<th style="width:15%;">Șters</th>';
+    $html .= '<th style="width:15%;">Activ</th>';
     $html .= '<th style="width:15%;">Înregistrat pe</th>';
     $html .= '<th style="width:10%;">Acțiuni</th>';
     $html .= '</tr>';
@@ -125,9 +125,9 @@ if (count($reqs)>0) { // exista comenzi pentru utilizatorul conectat
         $html .= '<td data-label="Email">&nbsp;'.$reqs[$i]['email'].'</td>';
         $html .= '<td data-label="Adresa">&nbsp;'.$reqs[$i]['address'].'</td>';
         $html .= '<td data-label="Rol">&nbsp;'.$reqs[$i]['role_name'].'</td>';
-        $html .= '<td data-label="Validat">&nbsp;'.$reqs[$i]['is_validated'].'</td>';
-        $html .= '<td data-label="Șters">&nbsp;'.$reqs[$i]['is_deleted'].'</td>';
-        $html .= '<td data-label="Activat">&nbsp;'.$reqs[$i]['is_enabled'].'</td>';
+        $html .= '<td data-label="Validat">&nbsp;'.($reqs[$i]['is_validated']==0 ? 'Nu' : 'Da').'</td>';
+        //$html .= '<td data-label="Șters">&nbsp;'.($reqs[$i]['is_deleted']==0 ? 'Nu' : 'Da').'</td>';
+        $html .= '<td data-label="Activat">&nbsp;'.($reqs[$i]['is_enabled']==0 ? 'Nu' : 'Da').'</td>';
         $html .= '<td data-label="Înregistrat pe">&nbsp;'.$reqs[$i]['register_date'].'</td>';
         $html .= '<td><i class="fa fa-edit btn-edit" onclick="show_user(\''.$reqs[$i]['id_user'].'\')"></i> </td>';
         $html .= '</tr>';

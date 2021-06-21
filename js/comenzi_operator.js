@@ -2,12 +2,12 @@ var err_displayed=false;
 // imediat după ce a fost incarcata in browser structura DOM a paginii
 document.addEventListener("DOMContentLoaded", function() {
    setTimeout(load_requests,10);
-   var req_window = getId('request');
-   window.onclick = function(event) {
-      if (event.target == req_window) {
-         close_req();
-      }
-   }
+   // var req_window = getId('request');
+   // window.onclick = function(event) {
+   //    if (event.target == req_window) {
+   //       close_req();
+   //    }
+   // }
 });
 
 
@@ -22,6 +22,7 @@ function load_requests(){
 
          if (result['code'] == 1) { // ok, se afiseaza rezultatul
             getId("reqs").innerHTML = result['html'];
+            getId("nr_reqs").innerHTML = 'Nr: ' +result['nr_reqs'];
             getId('crt_page').options.length = 0;
             for(i=0;i<result['nr_pages'];i++) {
                var selected = false;
@@ -35,7 +36,7 @@ function load_requests(){
    };
    xhttp.open("POST", '../ajax/get_requests_operator.php', true);
    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-   xhttp.send(encodeURI("sort_col="+getId('sort_col').value+"&sort_order="+getId('sort_order').value+"&reqs_per_page="+getId('reqs_per_page').value+"&crt_page="+getId('crt_page').value));
+   xhttp.send(encodeURI("sort_col="+getId('sort_col').value+"&sort_order="+getId('sort_order').value+"&reqs_per_page="+getId('reqs_per_page').value+"&crt_page="+getId('crt_page').value+"&filter_data_start="+getId('filter_data_start').value+"&filter_id_user="+getId('filter_id_user').value+"&filter_id_state="+getId('filter_id_state').value+"&filter_id_paid="+getId('filter_id_paid').value));
 }
 
 // functie care afiseaza div-ul pentru adugarea/editarea unei comenzi
@@ -55,6 +56,16 @@ function show_request(id_req) {
 // functie care ascunde pop-ul pentru adaugarea unei cereri
 function close_req() {
    getId('request').style.display = "none";
+}
+
+
+function filter_request() {
+   var req_window = getId('req_filter');
+   req_window.style.display = "block";
+}
+
+function close_filter() {
+   getId('req_filter').style.display = "none";
 }
 
 function show_article(id_article = 0) {
@@ -280,4 +291,40 @@ function sort(col) {
 
 function reload_data(){
    setTimeout(load_requests,1);
+}
+
+function do_filter_requests() {
+   getId('filter_data_start').value = getId('data_start_filter').value;
+   getId('filter_id_user').value = getId('id_user_filter').value;
+   getId('filter_id_state').value = getId('id_state_filter').value;
+   getId('filter_id_paid').value = getId('id_paid_filter').value;
+   getId('filter_text').innerHTML = '';
+   if (getId('id_user_filter').value != '' && getId('id_user_filter').value != '0') {
+      getId('filter_text').innerHTML += ' client: ' + getId('id_user_filter').options[getId('id_user_filter').selectedIndex].text;
+   }
+   if (getId('data_start_filter').value != '') {
+      getId('filter_text').innerHTML += ' in data: ' + getId('data_start_filter').value;
+   }
+   if (getId('id_state_filter').value != '' && getId('id_state_filter').value != '-1') {
+      getId('filter_text').innerHTML += ' stare: ' + getId('id_state_filter').options[getId('id_state_filter').selectedIndex].text;
+   }
+   if (getId('id_paid_filter').value != '' && getId('id_paid_filter').value != '-1') {
+      getId('filter_text').innerHTML += ' achitate: ' + getId('id_paid_filter').options[getId('id_paid_filter').selectedIndex].text;
+   }
+   close_filter();
+   reload_data();
+}
+
+function do_clear_filter(){
+   getId('filter_text').innerHTML = '';
+   getId('filter_data_start').value = '';
+   getId('data_start_filter').value = '';
+   getId('filter_id_user').value = '';
+   getId('id_user_filter').value = '0';
+   getId('filter_id_state').value = '';
+   getId('id_state_filter').value = '-1';
+   getId('filter_id_paid').value = '';
+   getId('id_paid_filter').value = '-1';
+   close_filter();
+   reload_data();
 }

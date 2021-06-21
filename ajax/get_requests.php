@@ -120,7 +120,7 @@ if (count($reqs)>0) { // exista comenzi pentru utilizatorul conectat
     $html .= '<th style="width:12%;" class="sortable" onclick="sort(6);" ><div style="float: left;width:80%;text-align: center;">Pret</div>'.$sort_indicator[6].'</th>';
     $html .= '<th style="width:12%;" class="sortable" onclick="sort(7);" ><div style="float: left;width:80%;text-align: center;">Achitată</div>'.$sort_indicator[7].'</th>';
     $html .= '<th style="width:12%;" class="sortable" onclick="sort(8);" ><div style="float: left;width:80%;text-align: center;">Status</div>'.$sort_indicator[8].'</th>';
-    $html .= '<th style="width:10%;">Acțiuni</th>';
+    $html .= '<th style="width:10%;min-width:100px;">Acțiuni</th>';
     $html .= '</tr>';
     $html .= '</thead>';
 
