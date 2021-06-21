@@ -18,7 +18,7 @@ $sql = "SELECT *
 $user = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 if (count($user)>0) { // a fost gasit utilizatorul (cu parola) in baza de date, se marcheaza sesiunea ca fiind conectata (logged in)
 
-    if ( intval($user['is_validated'])==0 ) {
+    if ( intval($user[0]['is_validated'])==0 ) {
         $ret['login_ok'] = 0;
         $ret['message'] = 'Contul dvs. nu a fost inca validat de catre un administrator.';
         $_SESSION['logged_in'] = 0;
@@ -26,7 +26,7 @@ if (count($user)>0) { // a fost gasit utilizatorul (cu parola) in baza de date, 
         $_SESSION['id_user'] = 0;
         $_SESSION['name'] = '';
         $_SESSION['email'] = '';
-    } elseif ( intval($user['is_enabled'])==0 ) {
+    } elseif ( intval($user[0]['is_enabled'])==0 ) {
         $ret['login_ok'] = 0;
         $ret['message'] = 'Contul dvs. nu mai este activ. Luati legatura cu administratorul.';
         $_SESSION['logged_in'] = 0;
