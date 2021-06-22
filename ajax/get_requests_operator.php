@@ -43,6 +43,7 @@ $sql = "SELECT COUNT(*) AS cate FROM
             u.firstname,
             u.lastname,
             u.email,
+            u.telefon,
             SUM(p.price * a.quantity) AS price,
             ps.name AS payment_name
         FROM
@@ -126,6 +127,7 @@ $sql= "SELECT
             u.firstname,
             u.lastname,
             u.email,
+            u.telefon,
             SUM(p.price * a.quantity) AS price,
             ps.name AS payment_name
         FROM
@@ -156,6 +158,7 @@ if (count($reqs)>0) { // exista comenzi pentru utilizatorul conectat
     $html .= '<th style="width:7%;">Nr. crt</th>';
     $html .= '<th style="width:7%;" class="sortable" onclick="sort(1);" ><div style="float: left;width:80%;text-align: center;">Nr. comandă</div>'.$sort_indicator[1].'</th>';
     $html .= '<th style="width:20%;" class="sortable" onclick="sort(2);" ><div style="float: left;width:80%;text-align: center;">Nume client</div>'.$sort_indicator[2].'</th>';
+    $html .= '<th style="width:12%;"><div style="float: left;width:80%;text-align: center;">Telefon</div></th>';
     $html .= '<th style="width:100px;" class="sortable" onclick="sort(3);" ><div style="float: left;width:80%;text-align: center;">Data plasării</div>'.$sort_indicator[3].'</th>';
     $html .= '<th style="width:100px;" class="sortable" onclick="sort(4);" ><div style="float: left;width:80%;text-align: center;">Data terminării</div>'.$sort_indicator[4].'</th>';
     $html .= '<th style="width:10%;" class="sortable" onclick="sort(5);" ><div style="float: left;width:80%;text-align: center;">Nr. poziții</div>'.$sort_indicator[5].'</th>';
@@ -172,6 +175,7 @@ if (count($reqs)>0) { // exista comenzi pentru utilizatorul conectat
         $html .= '<td data-label="Nr. crt.">&nbsp;'.(($crt_page-1) * $reqs_per_page + $i + 1 ).'</td>';
         $html .= '<td data-label="Nr. comandă">&nbsp;'.$reqs[$i]['id_request'].'</td>';
         $html .= '<td data-label="Nume client">&nbsp;'.$reqs[$i]['firstname'].' '.$reqs[$i]['lastname'].'</td>';
+        $html .= '<td data-label="Telefon">&nbsp;'.$reqs[$i]['telefon'].'</td>';
         $html .= '<td data-label="Data plasării">&nbsp;'.$reqs[$i]['data_start'].'</td>';
         $html .= '<td data-label="Data terminării">&nbsp;'.$reqs[$i]['data_end'].'</td>';
         $html .= '<td data-label="Nr. poziții">&nbsp;'.$reqs[$i]['positions'].'</td>';

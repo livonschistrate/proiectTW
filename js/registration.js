@@ -8,6 +8,7 @@ function check_register(){
     var firstname = document.getElementById("Firstname").value;
     var lastname = document.getElementById("Lastname").value;
     var email = document.getElementById("Email").value;
+    var telefon = document.getElementById("Telefon").value;
     if (firstname=="") {
         show_alert("Prenumele nu a fost completat");
         return;
@@ -18,6 +19,10 @@ function check_register(){
     }
     if (email=="") {
         show_alert("Adresa de e-mail nu a fost completata");
+        return;
+    }
+    if (telefon=="") {
+        show_alert("Numarul de telefon nu a fost completat");
         return;
     }
     if (passw!=cpassw) {
@@ -48,5 +53,5 @@ function check_register(){
 
     xhttp.open("POST", '../ajax/check_register.php',true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhttp.send( encodeURI("firstname="+ firstname + "&lastname=" + lastname + "&email=" + email + "&password=" + passw));
+    xhttp.send( encodeURI("firstname="+ firstname + "&lastname=" + lastname + "&email=" + email + "&password=" + passw + "&telefon=" + telefon));
 }

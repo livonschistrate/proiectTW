@@ -36,6 +36,7 @@ if ($id_user==0) {
         $ret['lastname'] = $user['lastname'];
         $ret['address'] = $user['address'];
         $ret['email'] = $user['email'];
+        $ret['telefon'] = $user['telefon'];
 
         $ret['code'] = 1;
         $ret['message'] = 'ok';
@@ -47,6 +48,7 @@ if ($id_user==0) {
         $ret['lastname'] = '';
         $ret['address'] = '';
         $ret['email'] = '';
+        $ret['telefon'] = '';
         $ret['code'] = 99;
         $ret['message'] = 'Informațiile utilizatorului nu au fost găsite. Reîncărcați pagina și reluați operația.';
     }

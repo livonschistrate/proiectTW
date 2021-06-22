@@ -50,10 +50,15 @@ session_start();
         <input type="text" name="lname" id ="Lastname"placeholder="Nume" required>
         <br><br>
         <label>
-            <b>Adresa de email</b>    
-        </label>    
+            <b>Adresa de email</b>
+        </label>
         <input type="email" name="email" id ="Email"placeholder="Introduceti adresa de email" required>
-        <br><br>    
+        <br><br>
+        <label>
+            <b>Nr. telefon</b>
+        </label>
+        <input type="telefon" name="telefon" id ="Telefon" placeholder="Introduceti nr. de telefon" required>
+        <br><br>
         <label>
             <b>Parola</b>    
         </label>    

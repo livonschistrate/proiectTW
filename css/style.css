@@ -114,7 +114,7 @@ ul{
 input{
     margin-top:1em;
 }
-#Email, #Password{
+#Email, #Password, #Telefon{
     width: 80%;
     height: 2em;
     border: none;

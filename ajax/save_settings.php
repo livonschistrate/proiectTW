@@ -14,7 +14,8 @@ $id_user = intval(trim($_SESSION['id_user']));
  // se doreste actualizarea informatiilor unui user existent
     $sql = "UPDATE users SET firstname='".$_POST['firstname']."',
                              lastname='".$_POST['lastname']."',
-                             address='".$_POST['address']."'
+                             address='".$_POST['address']."',
+                             telefon='".$_POST['telefon']."'
                            WHERE id_user=".$id_user.";";
     $db->exec($sql);
     $ret['code'] = 1;

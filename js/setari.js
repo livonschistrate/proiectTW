@@ -15,6 +15,7 @@ function load_user(){
                 getId('lastname').value = result['lastname'];
                 getId('address').value = result['address'];
                 getId('email').value = result['email'];
+                getId('telefon').value = result['telefon'];
             } else {
                 show_alert(result['message']);
             }
@@ -39,7 +40,7 @@ function save_settings(){
     };
     xhttp.open("POST", '../ajax/save_settings.php', true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhttp.send(encodeURI('firstname='+getId('firstname').value + "&lastname=" + getId('lastname').value+"&address="+getId('address').value));
+    xhttp.send(encodeURI('firstname='+getId('firstname').value + "&lastname=" + getId('lastname').value+"&address="+getId('address').value+"&telefon="+getId('telefon').value));
 }
 function save_password(){
     if (getId('parola_1').value!=getId('parola_2').value) {

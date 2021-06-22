@@ -62,6 +62,14 @@ include "../include/db_auth.php";
                 </div>
             </div>
             <div class="article-row">
+                <div class="article-col-1">
+                    Telefon:
+                </div>
+                <div class="article-col-2">
+                    <input type="text" id="telefon" >
+                </div>
+            </div>
+            <div class="article-row">
                 <input type="button" value="Salvează" style="margin-bottom: 1em; float: right;" onclick="save_settings();">
             </div>
             <br>

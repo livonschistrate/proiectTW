@@ -83,6 +83,7 @@ $sql = "SELECT
             u.firstname,
             u.lastname,
             u.email,
+            u.telefon,
             u.address,
             ur.name AS role_name,
             u.is_validated,
@@ -107,6 +108,7 @@ if (count($reqs)>0) { // exista comenzi pentru utilizatorul conectat
     $html .= '<th style="width:7%;" class="sortable" onclick="sort(1);" ><div style="float: left;width:80%;text-align: center;">Id util.</div>'.$sort_indicator[1].'</th>';
     $html .= '<th style="width:20%;" class="sortable" onclick="sort(2);" ><div style="float: left;width:80%;text-align: center;">Nume utilizator</div>'.$sort_indicator[2].'</th>';
     $html .= '<th style="width:10%;" class="sortable" onclick="sort(3);" ><div style="float: left;width:80%;text-align: center;">Email</div>'.$sort_indicator[3].'</th>';
+    $html .= '<th style="width:10%;" class="sortable"><div style="float: left;width:80%;text-align: center;">Telefon</div></th>';
     $html .= '<th style="width:10%;" class="sortable" onclick="sort(4);" ><div style="float: left;width:80%;text-align: center;">Adresa</div>'.$sort_indicator[4].'</th>';
     $html .= '<th style="width:15%;" class="sortable" onclick="sort(5);" ><div style="float: left;width:80%;text-align: center;">Rol</div>'.$sort_indicator[5].'</th>';
     $html .= '<th style="width:15%;">Valid</th>';
@@ -123,6 +125,7 @@ if (count($reqs)>0) { // exista comenzi pentru utilizatorul conectat
         $html .= '<td data-label="Id util.">&nbsp;'.$reqs[$i]['id_user'].'</td>';
         $html .= '<td data-label="Nume client">&nbsp;'.$reqs[$i]['firstname'].' '.$reqs[$i]['lastname'].'</td>';
         $html .= '<td data-label="Email">&nbsp;'.$reqs[$i]['email'].'</td>';
+        $html .= '<td data-label="Telefon">&nbsp;'.$reqs[$i]['telefon'].'</td>';
         $html .= '<td data-label="Adresa">&nbsp;'.$reqs[$i]['address'].'</td>';
         $html .= '<td data-label="Rol">&nbsp;'.$reqs[$i]['role_name'].'</td>';
         $html .= '<td data-label="Validat">&nbsp;'.($reqs[$i]['is_validated']==0 ? 'Nu' : 'Da').'</td>';

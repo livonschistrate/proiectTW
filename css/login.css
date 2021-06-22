@@ -142,7 +142,7 @@ ul{
 input{
     margin-top:1em;
 }
-#Firstname, #Lastname, #Email, #Password, #CPassword{
+#Firstname, #Lastname, #Email, #Password, #CPassword, #Telefon{
     width: 80%;
     height: 2em;  
     border: none;
