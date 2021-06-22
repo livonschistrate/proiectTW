@@ -35,17 +35,15 @@
             </div>
         </header>
     </div>
-    <h1 class="title"><span class="title2">Get in touch</span></h1>
+    <h1 class="title">Get in touch</h1>
     <div class="contact-container">
        <div class="contact">
            <p>Telefon: 0745186148</p>
            <p>Email: CleA@uaic.ro</p>
        </div>
        <section class="openinghours">
-        <div class="openinghourscontent section">
-            <div class="header">
+        <div class="openinghourscontent">
                  <h2>Deschis intre orele:</h2>
-            </div>
             <table class="opening-hours-table">
                 <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
                     <td>Luni</td>

@@ -115,13 +115,18 @@ a {color:inherit;}
 }
 
 .title{  
-    text-align: center;  
-    padding: 3%;
+    background:rgb(0,0,0);
+    background:rgba(0, 128, 128, 0.85);
+    color:#f1f1f1;
+    width:20%;
+    padding:15px;
+    margin-top:5%;
+    margin-left:40%;
+    margin-bottom:10%;
+    border-radius:10em;
+    text-align:center;
 }  
-.title2{
-    
-    padding: 1em;
-}
+
 .subscription-container{
     display:flex;
     flex-direction: row;
@@ -133,21 +138,36 @@ a {color:inherit;}
 }
 h3.subscription-header{
     padding:1em;
+    text-align:center;
+    border-radius:2em;
+    background:black;
+    margin-bottom:10%;
+    margin-left:33%;
+    margin-right:33%;
 }
 .subscription-option{
-    background: gray;
-    border-radius: 3em;
+    border-radius:1.5em;
+    margin:2em;
+    box-shadow: 0 0 100px black;
+    background:rgb(0,0,0);
+    background:rgba(0, 128, 128, 0.95);
+    color:#f1f1f1;
+    margin-bottom:10%;
     
 }
 .sub-button{
-    margin-left: 3em;
+    margin-left: 31%;
+    margin-right: 31%;
     margin-bottom: 10%;
     margin-top: 10%;
     height: 3em;
-    background-color: white;
+    padding:0.7em 1.7em;
+    border-radius:0.2em;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 .sub-button:hover{
-    background-color: teal;
+    background-color: black;
     cursor:pointer;
     color:white;
 }
@@ -155,7 +175,8 @@ h3.subscription-header{
     margin-top:5em;
 }
 .motivation-inc{
-    color: darkmagenta;
+    color: black;
+    font-size: 1.5em;
 }
 
 .footer{

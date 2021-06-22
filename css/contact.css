@@ -29,20 +29,6 @@ body
     background-color: rgb(54, 145, 145);
 
 }
-.titleH{
-    display: flex;
-    margin: 0.5em;
-    margin-left: 1.5em;
-    font-size: 2.5em;
-    font-weight: bold;
-    float: left;
-    color: rgb(130, 238, 188);
-    font-family: 'Source Sans Pro', sans-serif;
-}
-.titleH:hover{
-    cursor: pointer;
-}
-
 
 .menubar{
     position: relative;
@@ -115,52 +101,29 @@ a {color:inherit;}
 }
 
 .title{  
-    text-align: center;  
-    padding: 3%;
+    background:rgb(0,0,0);
+    background:rgba(0, 128, 128, 0.85);
+    color:#f1f1f1;
+    width:20%;
+    padding:15px;
+    margin-top:5%;
+    margin-left:40%;
+    margin-bottom:-5%;
+    border-radius:10em;
+    text-align:center;
 }  
-.title2{
-    background-color: whitesmoke;
-    padding: 1em;
-}
-.subscription-container{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    justify-content: space-around;
-    margin-top: 5em;
-    flex-wrap: wrap;
-}
-.subscription-option{
-    background: gray;
-    border-radius: 3em;
-}
-.sub-button{
-    margin-left: 3em;
-    margin-bottom: 10%;
-    margin-top: 10%;
-    height: 3em;
-    background-color: white;
-}
-.sub-button:hover{
-    background-color: teal;
-    cursor:pointer;
-    color:white;
-}
-.motivation{
-    margin-top:5em;
-}
-.motivation-inc{
-    color: darkmagenta;
-}
+
 .openinghours {
     font-family:Lucida Console;
     border-radius:1.5em;
     margin:2em;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 100px black;
     padding: 2em;
     overflow: hidden;
     display: inline-block;
-    background: grey;
+    background:rgb(0,0,0);
+    background:rgba(0, 128, 128, 0.95);
+    color:#f1f1f1;
 }
 .openinghourscontent h2 {
     display:block;
@@ -186,13 +149,19 @@ a {color:inherit;}
 
 }
 .contact{
+    display:flex;
+    flex-direction:column;
     font-family:Lucida Console;
     border-radius:1.5em;
     margin:2em;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 100px black;
     padding: 2em;
-    background: grey;
+    background:rgb(0,0,0);
+    background:rgba(0, 128, 128, 0.95);
+    color:#f1f1f1;
     margin-bottom: 2em;
+    justify-content: space-around;
+    
 }   
 .footer{
     display: flex;
