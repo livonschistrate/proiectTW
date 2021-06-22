@@ -74,7 +74,6 @@ if ($_SESSION['level']<10) { // nu este rang de administrator
 
         <div class="req-header">
             <div class="req-title">Utilizatori</div>
-            <i class="fa fa-2x fa-plus-circle add-req" onclick="show_user(0);" title="Adaugă un utlizator"></i>
         </div>
         <div class="pagination">
             Pag.
