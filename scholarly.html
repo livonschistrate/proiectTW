@@ -81,9 +81,51 @@
                 </a>
             </li>
             <li>
-                <a href="#Referinte">
+                <a href="#Diagrame">
                     <span>5. </span>
-                    Referinte
+                    Diagrama aplicatiei
+                </a>
+            </li>
+            <li>
+                <a href="#userguide">
+                    <span>6. </span>
+                    User guide
+                </a>
+            </li>
+            <li>
+                <a href="#uglogin">
+                    <span>6.1 </span>
+                    Log-in
+                </a>
+            </li>
+            <li>
+                <a href="#ugregister">
+                    <span>6.2 </span>
+                    Register
+                </a>
+            </li>
+            <li>
+                <a href="#ugdashboard">
+                    <span>6.3 </span>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#ugcommand">
+                    <span>6.4 </span>
+                    Pagina cu comenzi
+                </a>
+            </li>
+            <li>
+                <a href="#futureImplement">
+                    <span>7. </span>
+                    Ce ar mai putea fi implementat
+                </a>
+            </li>
+            <li>
+                <a href="#Bibliografie">
+                    <span>8. </span>
+                    Bibliografie
                 </a>
             </li>
         </ol>
@@ -225,17 +267,79 @@
         <p> </p>
         <img src="images/DiagramApp.png" style="width:65em;">
     </section>
-    
+    <section typeof="sa:userguide" id="userguide">
+        <h2>
+            <span>6.</span>
+            User guide
+        </h2>
+        <p>
+            Aceasta parte va fi un ghid pentru clientii care vor utiliza aceasta aplicatie.
+        </p>
+    </section>
+    <section typeof="sa:log-in" id="uglogin">
+        <h3>
+            <span>6.1</span>
+            Login
+        </h3>
+        <p>
+            Pagina de login are rolul de a autentifica utilizatorii si sa primeasca permisiunea
+            de ori a vedea comenzile pe care le-a facut, ori sa creeze una. Pentru asta, clientii
+            au nevoie sa introduca adresa de email si parola cu care s-au inregistrat. 
+        </p>
+    </section>
+    <section typeof="sa:register" id="ugregister">
+        <h3>
+            <span>6.2</span>
+            Register
+        </h3>
+        <p>
+            Pagina de register permite clientilor sa-si creeze un cont, chiar daca nu au facut
+            unul. Acest cont va putea fi folosit pentru a avea acces la aplicatie. Clientii au nevoie
+            sa-si introduca numele, prenumele, parola, adresa de email si numarul de telefon. 
+        </p>
+    </section>
+    <section typeof="sa:dashboard" id="ugdashboard">
+        <h3>
+            <span>6.3</span>
+            Dashboard
+        </h3>
+        <p>
+            Pagina de dashboard contine detalii legate de cererile facute pana acum si un meniu
+            ce contine linkurile la comenzi, setari, si logout.
+        </p>
+    </section>
+    <section typeof="sa:pcommand" id="ugcommand">
+        <h3>
+            <span>6.4</span>
+            Pagina cu comenzi
+        </h3>
+        <p>
+            Aceasta pagina afiseaza un tabel cu toate comenzile facute de acel client. Pagina contine
+            atat butoane de sortare la fiecare coloana, cat si un buton ce duce la crearea acelei comenzi.
+            Pentru a crea o comanda, mai intai se salveaza comanda, apoi se introduce lista cu articolele
+            care trebuiesc spalate. Pentru fiecare articol, se va lua in considerare tipul acelui articol,
+            materialul din care este facut si cate sunt de acest fel. Aceasta comanda poate fi ulterior
+            ori modificata prin adaugarea/stergerea articolelor sau prin schimbarea zilei de preluare, ori prin
+            stergerea ei, ducand la anularea comenzii.
+        </p>
+    </section>
     <section typeof="sa:futureImplement" id="futureImplement" role="doc-fimpl">
         <h2>
             <span>7.</span>
             Ce ar mai putea fi implementat
         </h2>
         <p> </p>
-        <li></li>
-        <li></li>
+        <li> extinderea mecanismelor de paginare si sortare (unde este cazul) la toate
+            paginile din aplicatie care afiseaza tabele
+        </li>
+        <li> imbunatatirea tratarii erorilor, mai ales cand ar putea aparea probleme legate de operatiile
+            cu baza de date (insert/update) prin introducerea unor mesaje explicite
+        </li>
+        <li> introducerea unui mecanism care sa salveze in baza de date erorile care apar
+            in partea de backend (php) pentru a putea ajuta la depanarea aplicatiei
+        </li>
     </section>
-    <section typeof="sa:ReferenceList" id="Referinte" role="doc-bibliography"></section>
+    <section typeof="sa:ReferenceList" id="Bibliografie" role="doc-bibliography"></section>
         <h2>
             <span>8.</span>
             Bibliografie</h2>
